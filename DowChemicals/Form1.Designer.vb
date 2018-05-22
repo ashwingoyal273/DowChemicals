@@ -66,7 +66,7 @@ Partial Class Form1
         Me.btnDisplay.Location = New System.Drawing.Point(198, 253)
         Me.btnDisplay.Name = "btnDisplay"
         Me.btnDisplay.Size = New System.Drawing.Size(218, 36)
-        Me.btnDisplay.TabIndex = 2
+        Me.btnDisplay.TabIndex = 4
         Me.btnDisplay.Text = "Print RTM"
         Me.btnDisplay.UseVisualStyleBackColor = True
         '
@@ -77,7 +77,7 @@ Partial Class Form1
         Me.cbxScope.Location = New System.Drawing.Point(138, 206)
         Me.cbxScope.Name = "cbxScope"
         Me.cbxScope.Size = New System.Drawing.Size(453, 28)
-        Me.cbxScope.TabIndex = 4
+        Me.cbxScope.TabIndex = 3
         '
         'lblTime
         '
@@ -130,7 +130,7 @@ Partial Class Form1
         Me.btnSetup.Location = New System.Drawing.Point(459, 253)
         Me.btnSetup.Name = "btnSetup"
         Me.btnSetup.Size = New System.Drawing.Size(132, 36)
-        Me.btnSetup.TabIndex = 10
+        Me.btnSetup.TabIndex = 6
         Me.btnSetup.Text = "Setup"
         Me.btnSetup.UseVisualStyleBackColor = True
         '
@@ -140,7 +140,7 @@ Partial Class Form1
         Me.btnmisc.Location = New System.Drawing.Point(19, 253)
         Me.btnmisc.Name = "btnmisc"
         Me.btnmisc.Size = New System.Drawing.Size(151, 36)
-        Me.btnmisc.TabIndex = 11
+        Me.btnmisc.TabIndex = 5
         Me.btnmisc.Text = "Misc. Job"
         Me.btnmisc.UseVisualStyleBackColor = True
         '
@@ -172,7 +172,7 @@ Partial Class Form1
         Me.cbxsubarea.Location = New System.Drawing.Point(138, 172)
         Me.cbxsubarea.Name = "cbxsubarea"
         Me.cbxsubarea.Size = New System.Drawing.Size(453, 28)
-        Me.cbxsubarea.TabIndex = 14
+        Me.cbxsubarea.TabIndex = 2
         '
         'cbxarea
         '
@@ -182,7 +182,7 @@ Partial Class Form1
         Me.cbxarea.Location = New System.Drawing.Point(138, 136)
         Me.cbxarea.Name = "cbxarea"
         Me.cbxarea.Size = New System.Drawing.Size(453, 28)
-        Me.cbxarea.TabIndex = 15
+        Me.cbxarea.TabIndex = 1
         '
         'Form1
         '

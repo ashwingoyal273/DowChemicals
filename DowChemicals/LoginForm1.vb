@@ -28,6 +28,9 @@ Public Class LoginForm1
     End Sub
 
     Private Sub LoginForm1_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        username = My.Settings.adminusername
+        password = My.Settings.pass
+        txtusername.Focus()
         txtusername.Text = ""
         txtpass.Text = ""
 

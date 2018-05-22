@@ -57,7 +57,7 @@ Partial Class LoginForm3
         Me.Label2.Location = New System.Drawing.Point(232, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(140, 51)
-        Me.Label2.TabIndex = 11
+        Me.Label2.TabIndex = 3
         Me.Label2.Text = "Setup"
         '
         'btnback
@@ -66,7 +66,7 @@ Partial Class LoginForm3
         Me.btnback.Location = New System.Drawing.Point(481, 402)
         Me.btnback.Name = "btnback"
         Me.btnback.Size = New System.Drawing.Size(123, 36)
-        Me.btnback.TabIndex = 13
+        Me.btnback.TabIndex = 8
         Me.btnback.Text = "Back"
         Me.btnback.UseVisualStyleBackColor = True
         '
@@ -76,7 +76,7 @@ Partial Class LoginForm3
         Me.btnequipment.Location = New System.Drawing.Point(191, 109)
         Me.btnequipment.Name = "btnequipment"
         Me.btnequipment.Size = New System.Drawing.Size(90, 38)
-        Me.btnequipment.TabIndex = 15
+        Me.btnequipment.TabIndex = 0
         Me.btnequipment.Text = "Add"
         Me.btnequipment.UseVisualStyleBackColor = True
         '
@@ -86,7 +86,7 @@ Partial Class LoginForm3
         Me.btnchng.Location = New System.Drawing.Point(56, 153)
         Me.btnchng.Name = "btnchng"
         Me.btnchng.Size = New System.Drawing.Size(477, 37)
-        Me.btnchng.TabIndex = 17
+        Me.btnchng.TabIndex = 3
         Me.btnchng.Text = "Change Admin Password"
         Me.btnchng.UseVisualStyleBackColor = True
         '
@@ -96,7 +96,7 @@ Partial Class LoginForm3
         Me.btnadduser.Location = New System.Drawing.Point(56, 196)
         Me.btnadduser.Name = "btnadduser"
         Me.btnadduser.Size = New System.Drawing.Size(477, 37)
-        Me.btnadduser.TabIndex = 18
+        Me.btnadduser.TabIndex = 4
         Me.btnadduser.Text = "Add/Change user"
         Me.btnadduser.UseVisualStyleBackColor = True
         '
@@ -106,7 +106,7 @@ Partial Class LoginForm3
         Me.btnequipmentremove.Location = New System.Drawing.Point(418, 109)
         Me.btnequipmentremove.Name = "btnequipmentremove"
         Me.btnequipmentremove.Size = New System.Drawing.Size(115, 38)
-        Me.btnequipmentremove.TabIndex = 20
+        Me.btnequipmentremove.TabIndex = 2
         Me.btnequipmentremove.Text = "Remove "
         Me.btnequipmentremove.UseVisualStyleBackColor = True
         '
@@ -116,7 +116,7 @@ Partial Class LoginForm3
         Me.btnchangesource.Location = New System.Drawing.Point(56, 239)
         Me.btnchangesource.Name = "btnchangesource"
         Me.btnchangesource.Size = New System.Drawing.Size(185, 37)
-        Me.btnchangesource.TabIndex = 22
+        Me.btnchangesource.TabIndex = 5
         Me.btnchangesource.Text = "Change source path"
         Me.btnchangesource.UseVisualStyleBackColor = True
         '
@@ -126,7 +126,7 @@ Partial Class LoginForm3
         Me.btnview.Location = New System.Drawing.Point(287, 109)
         Me.btnview.Name = "btnview"
         Me.btnview.Size = New System.Drawing.Size(125, 38)
-        Me.btnview.TabIndex = 23
+        Me.btnview.TabIndex = 1
         Me.btnview.Text = "View"
         Me.btnview.UseVisualStyleBackColor = True
         '
@@ -137,7 +137,7 @@ Partial Class LoginForm3
         Me.Label1.Location = New System.Drawing.Point(62, 118)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 20)
-        Me.Label1.TabIndex = 24
+        Me.Label1.TabIndex = 6
         Me.Label1.Text = "Equipment"
         '
         'btnsavepath
@@ -146,7 +146,7 @@ Partial Class LoginForm3
         Me.btnsavepath.Location = New System.Drawing.Point(247, 239)
         Me.btnsavepath.Name = "btnsavepath"
         Me.btnsavepath.Size = New System.Drawing.Size(171, 37)
-        Me.btnsavepath.TabIndex = 25
+        Me.btnsavepath.TabIndex = 6
         Me.btnsavepath.Text = "Change save path"
         Me.btnsavepath.UseVisualStyleBackColor = True
         '
@@ -156,7 +156,7 @@ Partial Class LoginForm3
         Me.btnviewpath.Location = New System.Drawing.Point(424, 238)
         Me.btnviewpath.Name = "btnviewpath"
         Me.btnviewpath.Size = New System.Drawing.Size(109, 38)
-        Me.btnviewpath.TabIndex = 26
+        Me.btnviewpath.TabIndex = 7
         Me.btnviewpath.Text = "View"
         Me.btnviewpath.UseVisualStyleBackColor = True
         '
