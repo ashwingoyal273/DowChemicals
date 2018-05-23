@@ -35,6 +35,8 @@ Partial Class Mainlogin
         Me.txtusername = New System.Windows.Forms.TextBox()
         Me.txtpass = New System.Windows.Forms.TextBox()
         Me.OK = New System.Windows.Forms.Button()
+        Me.btnFp = New System.Windows.Forms.Button()
+        Me.btnadminlogin = New System.Windows.Forms.Button()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -44,16 +46,16 @@ Partial Class Mainlogin
         Me.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
         Me.LogoPictureBox.InitialImage = CType(resources.GetObject("LogoPictureBox.InitialImage"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(12, 10)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(165, 193)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(165, 217)
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsernameLabel.Location = New System.Drawing.Point(172, 24)
+        Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernameLabel.Location = New System.Drawing.Point(187, 9)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
         Me.UsernameLabel.TabIndex = 0
@@ -62,8 +64,8 @@ Partial Class Mainlogin
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordLabel.Location = New System.Drawing.Point(172, 81)
+        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.Location = New System.Drawing.Point(187, 65)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 2
@@ -73,7 +75,7 @@ Partial Class Mainlogin
         'txtusername
         '
         Me.txtusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtusername.Location = New System.Drawing.Point(174, 44)
+        Me.txtusername.Location = New System.Drawing.Point(191, 35)
         Me.txtusername.Name = "txtusername"
         Me.txtusername.Size = New System.Drawing.Size(220, 27)
         Me.txtusername.TabIndex = 1
@@ -81,7 +83,7 @@ Partial Class Mainlogin
         'txtpass
         '
         Me.txtpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpass.Location = New System.Drawing.Point(174, 101)
+        Me.txtpass.Location = New System.Drawing.Point(191, 88)
         Me.txtpass.Name = "txtpass"
         Me.txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpass.Size = New System.Drawing.Size(220, 27)
@@ -90,17 +92,37 @@ Partial Class Mainlogin
         'OK
         '
         Me.OK.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OK.Location = New System.Drawing.Point(225, 141)
+        Me.OK.Location = New System.Drawing.Point(249, 121)
         Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(103, 29)
+        Me.OK.Size = New System.Drawing.Size(103, 39)
         Me.OK.TabIndex = 4
         Me.OK.Text = "&Login"
+        '
+        'btnFp
+        '
+        Me.btnFp.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFp.Location = New System.Drawing.Point(298, 166)
+        Me.btnFp.Name = "btnFp"
+        Me.btnFp.Size = New System.Drawing.Size(121, 61)
+        Me.btnFp.TabIndex = 5
+        Me.btnFp.Text = "Forgot Password"
+        '
+        'btnadminlogin
+        '
+        Me.btnadminlogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnadminlogin.Location = New System.Drawing.Point(183, 166)
+        Me.btnadminlogin.Name = "btnadminlogin"
+        Me.btnadminlogin.Size = New System.Drawing.Size(109, 61)
+        Me.btnadminlogin.TabIndex = 6
+        Me.btnadminlogin.Text = "Admin Login"
         '
         'Mainlogin
         '
         Me.AcceptButton = Me.OK
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(401, 192)
+        Me.ClientSize = New System.Drawing.Size(423, 236)
+        Me.Controls.Add(Me.btnadminlogin)
+        Me.Controls.Add(Me.btnFp)
         Me.Controls.Add(Me.OK)
         Me.Controls.Add(Me.txtpass)
         Me.Controls.Add(Me.txtusername)
@@ -111,6 +133,7 @@ Partial Class Mainlogin
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Mainlogin"
+        Me.ShowIcon = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "User Login"
@@ -121,4 +144,6 @@ Partial Class Mainlogin
     End Sub
 
     Public WithEvents txtusername As TextBox
+    Friend WithEvents btnFp As Button
+    Friend WithEvents btnadminlogin As Button
 End Class

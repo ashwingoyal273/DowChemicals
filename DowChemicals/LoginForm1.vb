@@ -14,11 +14,11 @@ Public Class LoginForm1
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
-        Form1.Show()
+        Mainlogin.Show()
         Me.Hide()
     End Sub
     Private Sub close_form() Handles Me.Closing
-        Form1.Show()
+        Mainlogin.Show()
 
     End Sub
 

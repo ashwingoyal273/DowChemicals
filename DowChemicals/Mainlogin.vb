@@ -32,4 +32,15 @@ Public Class Mainlogin
     Private Sub Mainlogin_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Application.Exit()
     End Sub
+
+    Private Sub ForgotPassword_click(sender As Object, e As EventArgs) Handles btnFp.Click
+        MessageBox.Show(Me, "Please contact your adminstator", "Forgot Password", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+    End Sub
+
+    Private Sub AdminLogin_Click(sender As Object, e As EventArgs) Handles btnadminlogin.Click
+        cnn.Close()
+        Me.Hide()
+        LoginForm1.Show()
+
+    End Sub
 End Class
