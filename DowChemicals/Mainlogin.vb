@@ -22,6 +22,7 @@ Public Class Mainlogin
                     Me.Hide()
                 Else
                     MessageBox.Show("The username or password entered is incorrect!", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+                    cnn.Close()
                 End If
             End Using
         End Using

@@ -48,8 +48,9 @@ Partial Class Form1
         '
         Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.Location = New System.Drawing.Point(138, 96)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(453, 27)
+        Me.txtName.Size = New System.Drawing.Size(454, 27)
         Me.txtName.TabIndex = 0
         '
         'lblname
@@ -65,9 +66,10 @@ Partial Class Form1
         'btnDisplay
         '
         Me.btnDisplay.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDisplay.Location = New System.Drawing.Point(198, 253)
+        Me.btnDisplay.Location = New System.Drawing.Point(198, 252)
+        Me.btnDisplay.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnDisplay.Name = "btnDisplay"
-        Me.btnDisplay.Size = New System.Drawing.Size(218, 36)
+        Me.btnDisplay.Size = New System.Drawing.Size(219, 36)
         Me.btnDisplay.TabIndex = 4
         Me.btnDisplay.Text = "Print RTM"
         Me.btnDisplay.UseVisualStyleBackColor = True
@@ -77,8 +79,9 @@ Partial Class Form1
         Me.cbxScope.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxScope.FormattingEnabled = True
         Me.cbxScope.Location = New System.Drawing.Point(138, 206)
+        Me.cbxScope.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxScope.Name = "cbxScope"
-        Me.cbxScope.Size = New System.Drawing.Size(453, 28)
+        Me.cbxScope.Size = New System.Drawing.Size(454, 28)
         Me.cbxScope.TabIndex = 3
         '
         'lblTime
@@ -112,7 +115,7 @@ Partial Class Form1
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(129, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(343, 51)
+        Me.Label2.Size = New System.Drawing.Size(342, 51)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Red Tag Master"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -123,15 +126,17 @@ Partial Class Form1
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(12, 295)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(144, 143)
+        Me.PictureBox1.Size = New System.Drawing.Size(144, 142)
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
         '
         'btnmisc
         '
         Me.btnmisc.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmisc.Location = New System.Drawing.Point(19, 253)
+        Me.btnmisc.Location = New System.Drawing.Point(19, 252)
+        Me.btnmisc.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmisc.Name = "btnmisc"
         Me.btnmisc.Size = New System.Drawing.Size(151, 36)
         Me.btnmisc.TabIndex = 5
@@ -164,8 +169,9 @@ Partial Class Form1
         Me.cbxsubarea.FormattingEnabled = True
         Me.cbxsubarea.Items.AddRange(New Object() {"T1", "T2", "PU", "PE"})
         Me.cbxsubarea.Location = New System.Drawing.Point(138, 172)
+        Me.cbxsubarea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxsubarea.Name = "cbxsubarea"
-        Me.cbxsubarea.Size = New System.Drawing.Size(453, 28)
+        Me.cbxsubarea.Size = New System.Drawing.Size(454, 28)
         Me.cbxsubarea.TabIndex = 2
         '
         'cbxarea
@@ -174,16 +180,18 @@ Partial Class Form1
         Me.cbxarea.FormattingEnabled = True
         Me.cbxarea.Items.AddRange(New Object() {"Production", "Logistics", "Utility", "Maintainance"})
         Me.cbxarea.Location = New System.Drawing.Point(138, 136)
+        Me.cbxarea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxarea.Name = "cbxarea"
-        Me.cbxarea.Size = New System.Drawing.Size(453, 28)
+        Me.cbxarea.Size = New System.Drawing.Size(454, 28)
         Me.cbxarea.TabIndex = 1
         '
         'btnchngpass
         '
         Me.btnchngpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnchngpass.Location = New System.Drawing.Point(459, 295)
+        Me.btnchngpass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnchngpass.Name = "btnchngpass"
-        Me.btnchngpass.Size = New System.Drawing.Size(134, 58)
+        Me.btnchngpass.Size = New System.Drawing.Size(133, 58)
         Me.btnchngpass.TabIndex = 14
         Me.btnchngpass.Text = "Change Password"
         Me.btnchngpass.UseVisualStyleBackColor = True
@@ -200,7 +208,8 @@ Partial Class Form1
         'btnlogout
         '
         Me.btnlogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnlogout.Location = New System.Drawing.Point(459, 253)
+        Me.btnlogout.Location = New System.Drawing.Point(459, 252)
+        Me.btnlogout.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnlogout.Name = "btnlogout"
         Me.btnlogout.Size = New System.Drawing.Size(132, 36)
         Me.btnlogout.TabIndex = 16
@@ -231,6 +240,7 @@ Partial Class Form1
         Me.Controls.Add(Me.txtName)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Red Tag Master"

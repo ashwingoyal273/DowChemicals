@@ -111,4 +111,8 @@ Public Class miscjob
         Me.Hide()
         Form1.Show()
     End Sub
+
+    Private Sub miscjob_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
+    End Sub
 End Class

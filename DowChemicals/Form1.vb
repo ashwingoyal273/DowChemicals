@@ -253,5 +253,14 @@ Public Class Form1
         Mainlogin.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btnchngpass_Click(sender As Object, e As EventArgs) Handles btnchngpass.Click
+        userchangepassword.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Form1_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
+    End Sub
 End Class
 
