@@ -12,15 +12,15 @@ Public Class miscjob
 
     Private Sub btnDisplay_Click(sender As Object, e As EventArgs) Handles btnDisplay.Click
         If txtName.Text = "" Then
-            MessageBox.Show("Please enter the name of the RTM issuer", "Error")
+            MessageBox.Show("Please enter the name of the RTM issuer", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         ElseIf txtJob.Text = "" Then
-            MessageBox.Show("Please enter the Job Scope", "Error")
+            MessageBox.Show("Please enter the Job Scope", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         ElseIf txtequipment.Text = "" Then
-            MessageBox.Show("Please enter the equipment name", "Error")
+            MessageBox.Show("Please enter the equipment name", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         ElseIf txtnooftags.Text = "" Then
-            MessageBox.Show("Please enter the number of tags required", "Error")
+            MessageBox.Show("Please enter the number of tags required", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         ElseIf IsNumeric(txtnooftags.Text) = False Then
-            MessageBox.Show("The Number of tags field can only be a number!", "Error")
+            MessageBox.Show("The Number of tags field can only be a number!", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         Else
 
             ' Dim year As Integer = DateTime.Now.Date.Year

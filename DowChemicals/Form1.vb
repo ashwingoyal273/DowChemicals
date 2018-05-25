@@ -5,9 +5,9 @@ Public Class Form1
     Dim opath As String = My.Settings.rtmpath
     Private Sub BtnDisplay_Click(sender As Object, e As EventArgs) Handles btnDisplay.Click
         If txtName.Text = "" Then
-            MessageBox.Show("Please enter the name of the RTM issuer", "Error")
+            MessageBox.Show("Please enter the name of the RTM issuer", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         ElseIf cbxScope.SelectedItem = "" Then
-            MessageBox.Show("Please select the Job Scope", "Error")
+            MessageBox.Show("Please select the Job Scope", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         Else
             Dim jobscope As String = cbxScope.SelectedItem
             jobscope = jobscope.Insert(0, "RTM for ")
