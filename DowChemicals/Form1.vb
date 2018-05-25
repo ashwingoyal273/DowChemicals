@@ -162,11 +162,6 @@ Public Class Form1
         lblTime.Text = TimeOfDay.ToString("h:mm:ss tt")
     End Sub
 
-    Private Sub btnSetup_Click(sender As Object, e As EventArgs)
-        My.Forms.Form1.Hide()
-        My.Forms.LoginForm1.Show()
-
-    End Sub
 
     Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Application.Exit()
