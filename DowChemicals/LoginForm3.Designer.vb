@@ -67,7 +67,7 @@ Partial Class LoginForm3
         Me.btnback.Name = "btnback"
         Me.btnback.Size = New System.Drawing.Size(123, 36)
         Me.btnback.TabIndex = 8
-        Me.btnback.Text = "Back"
+        Me.btnback.Text = "Logout"
         Me.btnback.UseVisualStyleBackColor = True
         '
         'btnequipment

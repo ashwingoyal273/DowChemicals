@@ -133,6 +133,7 @@ Partial Class Addchangeusers
         'Addchangeusers
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnclear)

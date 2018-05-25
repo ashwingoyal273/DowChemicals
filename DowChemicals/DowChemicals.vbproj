@@ -218,6 +218,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="userchangepassword.Designer.vb">
+      <DependentUpon>userchangepassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="userchangepassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Addchangeusers.resx">
@@ -243,6 +249,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userchangepassword.resx">
+      <DependentUpon>userchangepassword.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

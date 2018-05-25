@@ -33,12 +33,14 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnSetup = New System.Windows.Forms.Button()
         Me.btnmisc = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbxsubarea = New System.Windows.Forms.ComboBox()
         Me.cbxarea = New System.Windows.Forms.ComboBox()
+        Me.btnchngpass = New System.Windows.Forms.Button()
+        Me.lblusername = New System.Windows.Forms.Label()
+        Me.btnlogout = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -113,27 +115,18 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(343, 51)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Red Tag Master"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 316)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 295)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(120, 122)
+        Me.PictureBox1.Size = New System.Drawing.Size(144, 143)
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
-        '
-        'btnSetup
-        '
-        Me.btnSetup.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSetup.Location = New System.Drawing.Point(459, 253)
-        Me.btnSetup.Name = "btnSetup"
-        Me.btnSetup.Size = New System.Drawing.Size(132, 36)
-        Me.btnSetup.TabIndex = 6
-        Me.btnSetup.Text = "Setup"
-        Me.btnSetup.UseVisualStyleBackColor = True
         '
         'btnmisc
         '
@@ -185,18 +178,49 @@ Partial Class Form1
         Me.cbxarea.Size = New System.Drawing.Size(453, 28)
         Me.cbxarea.TabIndex = 1
         '
+        'btnchngpass
+        '
+        Me.btnchngpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnchngpass.Location = New System.Drawing.Point(459, 295)
+        Me.btnchngpass.Name = "btnchngpass"
+        Me.btnchngpass.Size = New System.Drawing.Size(134, 58)
+        Me.btnchngpass.TabIndex = 14
+        Me.btnchngpass.Text = "Change Password"
+        Me.btnchngpass.UseVisualStyleBackColor = True
+        '
+        'lblusername
+        '
+        Me.lblusername.AutoSize = True
+        Me.lblusername.Location = New System.Drawing.Point(12, 34)
+        Me.lblusername.Name = "lblusername"
+        Me.lblusername.Size = New System.Drawing.Size(94, 20)
+        Me.lblusername.TabIndex = 15
+        Me.lblusername.Text = "Username"
+        '
+        'btnlogout
+        '
+        Me.btnlogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlogout.Location = New System.Drawing.Point(459, 253)
+        Me.btnlogout.Name = "btnlogout"
+        Me.btnlogout.Size = New System.Drawing.Size(132, 36)
+        Me.btnlogout.TabIndex = 16
+        Me.btnlogout.Text = "Logout"
+        Me.btnlogout.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(605, 450)
+        Me.Controls.Add(Me.btnlogout)
+        Me.Controls.Add(Me.lblusername)
+        Me.Controls.Add(Me.btnchngpass)
         Me.Controls.Add(Me.cbxarea)
         Me.Controls.Add(Me.cbxsubarea)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnmisc)
-        Me.Controls.Add(Me.btnSetup)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -225,11 +249,13 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents btnSetup As Button
     Friend WithEvents btnmisc As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents cbxsubarea As ComboBox
     Friend WithEvents cbxarea As ComboBox
+    Friend WithEvents btnchngpass As Button
+    Friend WithEvents lblusername As Label
+    Friend WithEvents btnlogout As Button
 End Class
 

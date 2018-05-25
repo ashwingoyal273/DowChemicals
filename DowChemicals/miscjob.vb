@@ -4,6 +4,7 @@ Public Class miscjob
 
     Private Sub miscjob_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
+        Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick

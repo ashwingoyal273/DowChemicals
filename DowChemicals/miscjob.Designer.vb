@@ -38,6 +38,7 @@ Partial Class miscjob
         Me.btnDisplay = New System.Windows.Forms.Button()
         Me.btnback = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblusername = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -166,12 +167,24 @@ Partial Class miscjob
         Me.Label5.Size = New System.Drawing.Size(343, 51)
         Me.Label5.TabIndex = 23
         Me.Label5.Text = "Red Tag Master"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lblusername
+        '
+        Me.lblusername.AutoSize = True
+        Me.lblusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblusername.Location = New System.Drawing.Point(17, 37)
+        Me.lblusername.Name = "lblusername"
+        Me.lblusername.Size = New System.Drawing.Size(94, 20)
+        Me.lblusername.TabIndex = 24
+        Me.lblusername.Text = "Username"
         '
         'miscjob
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(605, 450)
+        Me.Controls.Add(Me.lblusername)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnback)
         Me.Controls.Add(Me.btnDisplay)
@@ -209,4 +222,5 @@ Partial Class miscjob
     Friend WithEvents btnDisplay As Button
     Friend WithEvents btnback As Button
     Friend WithEvents Label5 As Label
+    Friend WithEvents lblusername As Label
 End Class

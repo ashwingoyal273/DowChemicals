@@ -3,6 +3,7 @@ Imports System.ComponentModel
 Public Class Mainlogin
     Dim cnn As New OleDb.OleDbConnection
     Dim cmd As New OleDb.OleDbCommand
+    Public empusername As String = ""
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         If Not cnn.State = ConnectionState.Open Then
@@ -14,6 +15,8 @@ Public Class Mainlogin
             Using dt As New DataTable
                 da.Fill(dt)
                 If dt.Rows.Count > 0 Then
+                    empusername = txtusername.Text
+                    Form1.Form1_Load(Me, Nothing)
                     Form1.Show()
                     cnn.Close()
                     Me.Hide()
@@ -42,5 +45,12 @@ Public Class Mainlogin
         Me.Hide()
         LoginForm1.Show()
 
+    End Sub
+
+    Private Sub Mainlogin_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        cnn.ConnectionString = My.Settings.empConnectionString
+        txtusername.Text = ""
+        txtpass.Text = ""
+        txtusername.Focus()
     End Sub
 End Class

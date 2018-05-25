@@ -1,9 +1,8 @@
 Imports System.ComponentModel
 Public Class LoginForm3
     Private Sub Btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
-        Form1.Show()
+        Mainlogin.Show()
         Me.Hide()
-        Form1.Form1_Load(Me, Nothing)
     End Sub
 
 

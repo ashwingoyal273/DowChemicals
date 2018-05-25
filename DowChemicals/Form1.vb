@@ -151,6 +151,7 @@ Public Class Form1
     End Sub
     Public Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Timer1.Start()
+        Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
         cbxsubarea.Enabled = False
         cbxScope.Items.Clear()
 
@@ -161,7 +162,7 @@ Public Class Form1
         lblTime.Text = TimeOfDay.ToString("h:mm:ss tt")
     End Sub
 
-    Private Sub btnSetup_Click(sender As Object, e As EventArgs) Handles btnSetup.Click
+    Private Sub btnSetup_Click(sender As Object, e As EventArgs)
         My.Forms.Form1.Hide()
         My.Forms.LoginForm1.Show()
 
@@ -251,6 +252,11 @@ Public Class Form1
             End If
         Next
         cbxScope.IntegralHeight = True
+    End Sub
+
+    Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
+        Mainlogin.Show()
+        Me.Hide()
     End Sub
 End Class
 
