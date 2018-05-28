@@ -1,7 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Configuration.Install
 Imports System.IO
-
+<RunInstaller(True)>
 Public Class AccessInstallationCode
 
     Dim AccessComponentFile As String = "AccessDatabaseEngine.exe"

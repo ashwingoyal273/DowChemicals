@@ -167,13 +167,13 @@ Public Class Form1
         Application.Exit()
     End Sub
 
-    Private Sub btnmisc_Click(sender As Object, e As EventArgs) Handles btnmisc.Click
+    Private Sub Btnmisc_Click(sender As Object, e As EventArgs) Handles btnmisc.Click
         miscjob.Show()
         Me.Hide()
 
     End Sub
 
-    Private Sub cleardropdown()
+    Private Sub Cleardropdown()
         cbxScope.Text = String.Empty
         cbxScope.Items.Clear()
         cbxScope.SelectedIndex = -1
@@ -181,9 +181,9 @@ Public Class Form1
         cbxScope.IntegralHeight = False
     End Sub
 
-    Private Sub cbxarea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxarea.SelectedIndexChanged
+    Private Sub Cbxarea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxarea.SelectedIndexChanged
         opath = My.Settings.rtmpath
-        cleardropdown()
+        Cleardropdown()
         If StrComp(cbxarea.SelectedItem, "Production") = 0 Then
             cbxsubarea.Enabled = True
             opath &= "Production\"
@@ -220,8 +220,8 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub cbxsubarea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxsubarea.SelectedIndexChanged
-        cleardropdown()
+    Private Sub Cbxsubarea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxsubarea.SelectedIndexChanged
+        Cleardropdown()
         opath = My.Settings.rtmpath & "Production\"
         If StrComp(cbxsubarea.SelectedItem, "T1") = 0 Then
             opath &= "T1\"
@@ -249,12 +249,12 @@ Public Class Form1
         cbxScope.IntegralHeight = True
     End Sub
 
-    Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
+    Private Sub Btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
         Mainlogin.Show()
         Me.Hide()
     End Sub
 
-    Private Sub btnchngpass_Click(sender As Object, e As EventArgs) Handles btnchngpass.Click
+    Private Sub Btnchngpass_Click(sender As Object, e As EventArgs) Handles btnchngpass.Click
         userchangepassword.Show()
         Me.Hide()
     End Sub

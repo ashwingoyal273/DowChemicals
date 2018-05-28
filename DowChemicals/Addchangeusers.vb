@@ -5,10 +5,10 @@ Public Class Addchangeusers
     Private Sub Addchangeusers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cnn.ConnectionString = My.Settings.empConnectionString
         'TODO: This line of code loads data into the 'EmpDataSet.employee' table. You can move, or remove it, as needed.
-        update_display()
+        Update_display()
     End Sub
 
-    Private Sub update_display()
+    Private Sub Update_display()
 
 
         If Not cnn.State = ConnectionState.Open Then
@@ -28,13 +28,13 @@ Public Class Addchangeusers
         End Using
     End Sub
 
-    Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
+    Private Sub BtnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
         cnn.Close()
         LoginForm3.Show()
         Me.Hide()
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If txtusername.Text = "" Or txtpass.Text = "" Then
             MessageBox.Show(text:="Username and password cannot be empty!", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         Else
@@ -49,11 +49,11 @@ Public Class Addchangeusers
             Catch ex As System.Data.OleDb.OleDbException
                 MessageBox.Show(text:="Error occured in insertion please check if the username already exists in the database", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             End Try
-            update_display()
+            Update_display()
         End If
     End Sub
 
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If txtusername.Text = "" Then
             MessageBox.Show(text:="Username cannot be empty while deletion!", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         Else
@@ -67,11 +67,11 @@ Public Class Addchangeusers
             Catch ex As System.Data.OleDb.OleDbException
                 MessageBox.Show(text:="Error occured in deletion please check if the username is in the database", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             End Try
-            update_display()
+            Update_display()
         End If
     End Sub
 
-    Private Sub btnclear_Click(sender As Object, e As EventArgs) Handles btnclear.Click
+    Private Sub Btnclear_Click(sender As Object, e As EventArgs) Handles btnclear.Click
         txtpass.Text = ""
         txtusername.Text = ""
     End Sub
