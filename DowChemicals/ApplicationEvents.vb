@@ -21,9 +21,11 @@ Namespace My
         End Sub
 
         Private Sub MyApplication_StartupNextInstance(sender As Object, e As StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
-            Mainlogin.TopMost = True
+            Mainlogin.WindowState = FormWindowState.Normal
             MessageBox.Show(owner:=Mainlogin, text:="An Instance of the Application is already running", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error, defaultButton:=MessageBoxDefaultButton.Button1)
-
+            For Each frm In Application.OpenForms
+                If frm.windowstate = FormWindowState.Minimized Then frm.windowstate = FormWindowState.Normal
+            Next
         End Sub
     End Class
 End Namespace
