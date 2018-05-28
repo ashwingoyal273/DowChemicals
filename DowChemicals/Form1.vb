@@ -255,7 +255,7 @@ Public Class Form1
     End Sub
 
     Private Sub Btnchngpass_Click(sender As Object, e As EventArgs) Handles btnchngpass.Click
-        userchangepassword.Show()
+        Userchangepassword.Show()
         Me.Hide()
     End Sub
 

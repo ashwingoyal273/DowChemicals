@@ -29,7 +29,7 @@ Public Class Mainlogin
     End Sub
 
 
-    Private Sub load_form() Handles Me.Load
+    Private Sub Load_form() Handles Me.Load
         cnn.ConnectionString = My.Settings.empConnectionString
     End Sub
 

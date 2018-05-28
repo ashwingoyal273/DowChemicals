@@ -7,7 +7,7 @@ Public Class LoginForm3
 
 
 
-    Private Sub btnchng_Click(sender As Object, e As EventArgs) Handles btnchng.Click
+    Private Sub Btnchng_Click(sender As Object, e As EventArgs) Handles btnchng.Click
         Dim strpass As String
         strpass = InputBox("New Password", "Password Change", " ")
         If strpass = "" Then
@@ -48,7 +48,7 @@ Public Class LoginForm3
         End If
     End Sub
 
-    Private Sub btnequipmentremove_Click(sender As Object, e As EventArgs) Handles btnequipmentremove.Click
+    Private Sub Btnequipmentremove_Click(sender As Object, e As EventArgs) Handles btnequipmentremove.Click
         Dim eqp As String = InputBox("Please enter the name of the equipment that is to be deleted", "Equipment removal", " ")
         If eqp = " " Then
             MessageBox.Show(text:="Please enter valid File name", caption:=
@@ -73,7 +73,7 @@ Public Class LoginForm3
     End Sub
 
 
-    Private Sub btnchange_Click(sender As Object, e As EventArgs) Handles btnchangesource.Click
+    Private Sub Btnchange_Click(sender As Object, e As EventArgs) Handles btnchangesource.Click
         Dim rtmpathstr As String = InputBox("Please enter the full master file path" & Environment.NewLine & "A typical file path looks like this:" & Environment.NewLine & "DriveName:\Directory1\Directory2\", "Change File Path", " ")
         If rtmpathstr = " " Then
             MessageBox.Show(text:="Please enter a valid File Path", caption:=
@@ -86,7 +86,7 @@ Public Class LoginForm3
 
     End Sub
 
-    Private Sub btnview_Click(sender As Object, e As EventArgs) Handles btnview.Click
+    Private Sub Btnview_Click(sender As Object, e As EventArgs) Handles btnview.Click
         Dim viewstr As String = "The Equipment List in the system is:" & Environment.NewLine
         For Each eqp In My.Settings.equipment
             viewstr &= eqp & Environment.NewLine
@@ -94,7 +94,7 @@ Public Class LoginForm3
         MessageBox.Show(Me, viewstr, "Equipment List", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
     End Sub
 
-    Private Sub btnviewpath_Click(sender As Object, e As EventArgs) Handles btnviewpath.Click
+    Private Sub Btnviewpath_Click(sender As Object, e As EventArgs) Handles btnviewpath.Click
         Dim viewstr As String = "The Source Path is:" & Environment.NewLine
         viewstr &= My.Settings.rtmpath & Environment.NewLine
         viewstr &= "The Save Path is:" & Environment.NewLine
@@ -102,7 +102,7 @@ Public Class LoginForm3
         MessageBox.Show(Me, viewstr, "System Path Settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
     End Sub
 
-    Private Sub btnsavepath_Click(sender As Object, e As EventArgs) Handles btnsavepath.Click
+    Private Sub Btnsavepath_Click(sender As Object, e As EventArgs) Handles btnsavepath.Click
         Dim rtmpathstr As String = InputBox("Please enter the full save file path" & Environment.NewLine & "A typical file path looks like this:" & Environment.NewLine & "DriveName:\Directory1\Directory2\", "Change File Path", " ")
         If rtmpathstr = " " Then
             MessageBox.Show(text:="Please enter a valid File Path", caption:=

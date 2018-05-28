@@ -17,7 +17,7 @@ Public Class LoginForm1
         Mainlogin.Show()
         Me.Hide()
     End Sub
-    Private Sub close_form() Handles Me.Closing
+    Private Sub Close_form() Handles Me.Closing
         Mainlogin.Show()
 
     End Sub

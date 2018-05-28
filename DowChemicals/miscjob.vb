@@ -2,7 +2,7 @@
 Imports Microsoft.Office.Interop
 Public Class miscjob
 
-    Private Sub miscjob_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Miscjob_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
         Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
     End Sub
@@ -11,7 +11,7 @@ Public Class miscjob
         lblTime.Text = TimeOfDay.ToString("h:mm:ss tt")
     End Sub
 
-    Private Sub btnDisplay_Click(sender As Object, e As EventArgs) Handles btnDisplay.Click
+    Private Sub BtnDisplay_Click(sender As Object, e As EventArgs) Handles btnDisplay.Click
         If txtName.Text = "" Then
             MessageBox.Show("Please enter the name of the RTM issuer", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         ElseIf txtJob.Text = "" Then
@@ -103,16 +103,16 @@ Public Class miscjob
         End If
     End Sub
 
-    Private Sub miscjob_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    Private Sub Miscjob_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Application.Exit()
     End Sub
 
-    Private Sub btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
+    Private Sub Btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
         Me.Hide()
         Form1.Show()
     End Sub
 
-    Private Sub miscjob_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+    Private Sub Miscjob_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
         txtName.Text = ""
         txtnooftags.Text = ""

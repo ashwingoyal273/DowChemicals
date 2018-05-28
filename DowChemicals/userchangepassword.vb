@@ -1,15 +1,15 @@
 ﻿Imports System.ComponentModel
 
-Public Class userchangepassword
+Public Class Userchangepassword
     Dim cnn As New OleDb.OleDbConnection
     Dim cmd As New OleDb.OleDbCommand
 
-    Private Sub userchangepassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Userchangepassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cnn.ConnectionString = My.Settings.empConnectionString
         Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
     End Sub
 
-    Private Sub btnok_Click(sender As Object, e As EventArgs) Handles btnok.Click
+    Private Sub Btnok_Click(sender As Object, e As EventArgs) Handles btnok.Click
         If txtold.Text = "" Or txtnew.Text = "" Or txtconfirm.Text = "" Then
             MessageBox.Show(text:="All fields have to be filled", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             Exit Sub
@@ -45,17 +45,17 @@ Public Class userchangepassword
         Me.Hide()
     End Sub
 
-    Private Sub btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
+    Private Sub Btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
         Form1.Show()
         Me.Hide()
     End Sub
 
-    Private Sub userchangepassword_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    Private Sub Userchangepassword_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Form1.Show()
         Me.Hide()
     End Sub
 
-    Private Sub userchangepassword_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+    Private Sub Userchangepassword_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
         txtold.Text = ""
         txtnew.Text = ""

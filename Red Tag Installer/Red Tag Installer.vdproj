@@ -21,8 +21,14 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2A0F0B4005DB496C900B86A5D336A24B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_308B26602C60FDCF211CBB7DA5C0AD2E"
-        "OwnerKey" = "8:_F5741E969AB84D00987F397DE4336CD9"
+        "OwnerKey" = "8:_C6F7181A72FF4CACB26BBAC26F6E65AE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,20 +45,26 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C6F7181A72FF4CACB26BBAC26F6E65AE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C96E47FACB95B99340337141A04B6291"
-        "OwnerKey" = "8:_F5741E969AB84D00987F397DE4336CD9"
+        "OwnerKey" = "8:_C6F7181A72FF4CACB26BBAC26F6E65AE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F4E27EE0F7D24C76ACC55A3AB47C7C17"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C6F7181A72FF4CACB26BBAC26F6E65AE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F5741E969AB84D00987F397DE4336CD9"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C96E47FACB95B99340337141A04B6291"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -65,18 +77,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_29E45680DA5A8C97ADB96D536F3BDEC1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F5741E969AB84D00987F397DE4336CD9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C96E47FACB95B99340337141A04B6291"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -119,17 +119,31 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_701A7D5CB81C4DADA77B0DB92034D4BE"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_9F0EF8C2DD634E78832573CD33CC864E"
             {
-            "Name" = "8:Primary output from DowChemicals (Active)"
+            "Name" = "8:AccessDatabaseEngine_X64.exe"
             "Condition" = "8:"
-            "Object" = "8:_F5741E969AB84D00987F397DE4336CD9"
+            "Object" = "8:_2A0F0B4005DB496C900B86A5D336A24B"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:/Install"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:2"
+            "Identifier" = "8:_8A51E754_F94E_48D6_A918_728502FC1052"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_A6D8714CA54743D1B115F2617B8B1673"
+            {
+            "Name" = "8:Primary output from DowChemicals (Debug x64)"
+            "Condition" = "8:"
+            "Object" = "8:_C6F7181A72FF4CACB26BBAC26F6E65AE"
             "FileType" = "3:2"
             "InstallAction" = "3:1"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_F2219E8D_3776_49A9_B9F5_8E221F0FA86E"
+            "Identifier" = "8:_E8B1D93B_595C_4B9E_89C6_96B95F7ACADE"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
@@ -185,6 +199,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2A0F0B4005DB496C900B86A5D336A24B"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\AccessDatabaseEngine_X64.exe"
+            "TargetName" = "8:AccessDatabaseEngine_X64.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_1AFF2DEC06434E8188791128EC2368DF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_308B26602C60FDCF211CBB7DA5C0AD2E"
@@ -289,26 +323,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F4E27EE0F7D24C76ACC55A3AB47C7C17"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\AccessDatabaseEngine.exe"
-            "TargetName" = "8:AccessDatabaseEngine.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_1AFF2DEC06434E8188791128EC2368DF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -366,7 +380,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Red Tag Installer"
         "ProductCode" = "8:{BEF5F509-82D5-4666-8883-78B7DCDF47F8}"
-        "PackageCode" = "8:{B334B6DC-1270-417D-80E8-7069E075DCE9}"
+        "PackageCode" = "8:{38FA6C97-A8D5-47E7-B0BF-88904409BB86}"
         "UpgradeCode" = "8:{5F9919D8-6656-43A5-BEDA-DA3E8BC985EF}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -486,34 +500,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_06E3C08E2F414348B9EC7490AA998C67"
-            {
-            "Name" = "8:Red Tag Master"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_F5741E969AB84D00987F397DE4336CD9"
-            "Folder" = "8:_7BA4032FF18F4A6F8F8B6D25A095150C"
-            "WorkingFolder" = "8:_1AFF2DEC06434E8188791128EC2368DF"
-            "Icon" = "8:_334F23DD60FA4F9996719A4199F151CE"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D8593D8AE3A140A595D7107CEC481A72"
-            {
-            "Name" = "8:Red Tag Master"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_F5741E969AB84D00987F397DE4336CD9"
-            "Folder" = "8:_BBDD79A54FDB4C7F8BDFC82BB7BAA5BA"
-            "WorkingFolder" = "8:_1AFF2DEC06434E8188791128EC2368DF"
-            "Icon" = "8:_334F23DD60FA4F9996719A4199F151CE"
-            "Feature" = "8:"
-            }
         }
         "UserInterface"
         {
@@ -913,7 +899,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F5741E969AB84D00987F397DE4336CD9"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C6F7181A72FF4CACB26BBAC26F6E65AE"
             {
             "SourcePath" = "8:..\\DowChemicals\\obj\\x64\\Debug\\Red Tag Master.exe"
             "TargetName" = "8:"
@@ -933,7 +919,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
+            "OutputConfiguration" = "8:Debug|x64"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{D21F2341-329A-4AB0-902D-D9B4A237235D}"
             "ShowKeyOutput" = "11:TRUE"
