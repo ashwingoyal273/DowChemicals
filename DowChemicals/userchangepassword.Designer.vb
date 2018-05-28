@@ -96,6 +96,7 @@ Partial Class userchangepassword
         Me.txtold.Location = New System.Drawing.Point(184, 162)
         Me.txtold.Margin = New System.Windows.Forms.Padding(4)
         Me.txtold.Name = "txtold"
+        Me.txtold.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtold.Size = New System.Drawing.Size(303, 27)
         Me.txtold.TabIndex = 0
         '
@@ -104,6 +105,7 @@ Partial Class userchangepassword
         Me.txtnew.Location = New System.Drawing.Point(184, 206)
         Me.txtnew.Margin = New System.Windows.Forms.Padding(4)
         Me.txtnew.Name = "txtnew"
+        Me.txtnew.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtnew.Size = New System.Drawing.Size(303, 27)
         Me.txtnew.TabIndex = 1
         '
@@ -112,6 +114,7 @@ Partial Class userchangepassword
         Me.txtconfirm.Location = New System.Drawing.Point(184, 252)
         Me.txtconfirm.Margin = New System.Windows.Forms.Padding(4)
         Me.txtconfirm.Name = "txtconfirm"
+        Me.txtconfirm.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtconfirm.Size = New System.Drawing.Size(303, 27)
         Me.txtconfirm.TabIndex = 2
         '

@@ -27,7 +27,7 @@
     <ProductName>Red Tag Master Propriety Tool</ProductName>
     <PublisherName>Ashwin Goyal</PublisherName>
     <SuiteName>Dow Chemicals International Pvt Ltd.</SuiteName>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
