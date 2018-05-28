@@ -9,7 +9,7 @@ Public Class LoginForm1
             LoginForm3.Show()
             Me.Hide()
         Else
-            MessageBox.Show("The username or password entered is incorrect!", "Error")
+            MessageBox.Show(Me, "The username or password entered is incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 

@@ -261,6 +261,7 @@ Public Class Form1
 
     Private Sub Form1_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
+        txtName.Text = ""
     End Sub
 End Class
 

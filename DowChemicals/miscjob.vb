@@ -114,5 +114,10 @@ Public Class miscjob
 
     Private Sub miscjob_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
+        txtName.Text = ""
+        txtnooftags.Text = ""
+        txtJob.Text = ""
+        txtequipment.Text = ""
+        txtName.Focus()
     End Sub
 End Class
