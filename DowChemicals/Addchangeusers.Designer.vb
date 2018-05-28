@@ -145,7 +145,9 @@ Partial Class Addchangeusers
         Me.Controls.Add(Me.txtusername)
         Me.Controls.Add(Me.btnDone)
         Me.Controls.Add(Me.lbltitleaddchange)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Addchangeusers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Addchangeusers"

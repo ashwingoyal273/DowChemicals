@@ -21,7 +21,9 @@ Namespace My
         End Sub
 
         Private Sub MyApplication_StartupNextInstance(sender As Object, e As StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
-            MessageBox.Show(text:="An Instance of the Application is already running", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+            Mainlogin.TopMost = True
+            MessageBox.Show(owner:=Mainlogin, text:="An Instance of the Application is already running", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error, defaultButton:=MessageBoxDefaultButton.Button1)
+
         End Sub
     End Class
 End Namespace

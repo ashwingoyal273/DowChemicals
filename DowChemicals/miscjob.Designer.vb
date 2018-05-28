@@ -198,7 +198,9 @@ Partial Class miscjob
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.lblname)
         Me.Controls.Add(Me.txtName)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "miscjob"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Miscellaneous Job"
