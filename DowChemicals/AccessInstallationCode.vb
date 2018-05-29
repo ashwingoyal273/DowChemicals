@@ -24,14 +24,13 @@ Public Class AccessInstallationCode
     End Sub
 
     Private Sub AccessInstallationCode_AfterInstall(ByVal sender As Object, ByVal e As System.Configuration.Install.InstallEventArgs) Handles Me.AfterInstall
-
         Dim str As String = System.Reflection.Assembly.GetExecutingAssembly().Location
         Dim ex As Exception
         Dim i As Integer = str.LastIndexOf("\"c)
 
-        If AccessDatabaseEngineInstalled() Then
-            Exit Sub
-        End If
+        'If AccessDatabaseEngineInstalled() Then
+        'Exit Sub
+        'End If
 
         Dim prc = New System.Diagnostics.Process()
 
@@ -78,6 +77,7 @@ Public Class AccessInstallationCode
         FileName2 = "C:\Program Files (x86)\Common Files\microsoft shared\OFFICE12\ACECORE.DLL"
 
         If File.Exists(FileName1) Or File.Exists(FileName2) Then
+            'MsgBox("ITS ALREADY INSTALLED YOU DUMB ASS")
             Return True
         Else
             Return False

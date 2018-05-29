@@ -37,6 +37,7 @@ Partial Class Mainlogin
         Me.OK = New System.Windows.Forms.Button()
         Me.btnFp = New System.Windows.Forms.Button()
         Me.btnadminlogin = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,7 +79,7 @@ Partial Class Mainlogin
         Me.txtusername.Location = New System.Drawing.Point(191, 35)
         Me.txtusername.Name = "txtusername"
         Me.txtusername.Size = New System.Drawing.Size(220, 27)
-        Me.txtusername.TabIndex = 1
+        Me.txtusername.TabIndex = 0
         '
         'txtpass
         '
@@ -87,15 +88,15 @@ Partial Class Mainlogin
         Me.txtpass.Name = "txtpass"
         Me.txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpass.Size = New System.Drawing.Size(220, 27)
-        Me.txtpass.TabIndex = 3
+        Me.txtpass.TabIndex = 1
         '
         'OK
         '
         Me.OK.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OK.Location = New System.Drawing.Point(249, 121)
+        Me.OK.Location = New System.Drawing.Point(183, 121)
         Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(103, 39)
-        Me.OK.TabIndex = 4
+        Me.OK.Size = New System.Drawing.Size(109, 39)
+        Me.OK.TabIndex = 2
         Me.OK.Text = "&Login"
         '
         'btnFp
@@ -104,7 +105,7 @@ Partial Class Mainlogin
         Me.btnFp.Location = New System.Drawing.Point(298, 166)
         Me.btnFp.Name = "btnFp"
         Me.btnFp.Size = New System.Drawing.Size(121, 61)
-        Me.btnFp.TabIndex = 5
+        Me.btnFp.TabIndex = 4
         Me.btnFp.Text = "Forgot Password"
         '
         'btnadminlogin
@@ -113,14 +114,24 @@ Partial Class Mainlogin
         Me.btnadminlogin.Location = New System.Drawing.Point(183, 166)
         Me.btnadminlogin.Name = "btnadminlogin"
         Me.btnadminlogin.Size = New System.Drawing.Size(109, 61)
-        Me.btnadminlogin.TabIndex = 6
+        Me.btnadminlogin.TabIndex = 3
         Me.btnadminlogin.Text = "Admin Login"
+        '
+        'btnClose
+        '
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(298, 121)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(121, 39)
+        Me.btnClose.TabIndex = 5
+        Me.btnClose.Text = "Close"
         '
         'Mainlogin
         '
         Me.AcceptButton = Me.OK
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(423, 236)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnadminlogin)
         Me.Controls.Add(Me.btnFp)
         Me.Controls.Add(Me.OK)
@@ -145,4 +156,5 @@ Partial Class Mainlogin
     Public WithEvents txtusername As TextBox
     Friend WithEvents btnFp As Button
     Friend WithEvents btnadminlogin As Button
+    Friend WithEvents btnClose As Button
 End Class
