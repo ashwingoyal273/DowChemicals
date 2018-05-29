@@ -39,7 +39,7 @@ Public Class AccessInstallationCode
 
         Try
             prc.StartInfo.FileName = str & "\" & AccessComponentFile
-            'prc.StartInfo.Arguments = "/quiet"
+            prc.StartInfo.Arguments = "/passive"
             prc.Start()
             prc.EnableRaisingEvents = True
             AddHandler prc.Exited, New EventHandler(AddressOf Prc_Exited)
