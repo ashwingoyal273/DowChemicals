@@ -66,5 +66,8 @@
     <Setting Name="savepath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\ashwi\Desktop\Dow Chemicals International\</Value>
     </Setting>
+    <Setting Name="firstime" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

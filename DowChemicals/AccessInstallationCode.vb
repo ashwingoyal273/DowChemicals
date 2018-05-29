@@ -24,6 +24,7 @@ Public Class AccessInstallationCode
     End Sub
 
     Private Sub AccessInstallationCode_AfterInstall(ByVal sender As Object, ByVal e As System.Configuration.Install.InstallEventArgs) Handles Me.AfterInstall
+        If Not Environment.Is64BitOperatingSystem Then AccessComponentFile = "AccessDatabaseEngine.exe"
         Dim str As String = System.Reflection.Assembly.GetExecutingAssembly().Location
         Dim ex As Exception
         Dim i As Integer = str.LastIndexOf("\"c)
