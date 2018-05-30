@@ -123,10 +123,22 @@ Partial Class Addchangeusers
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(13, 211)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.DataGridView1.ShowCellErrors = False
+        Me.DataGridView1.ShowCellToolTips = False
+        Me.DataGridView1.ShowEditingIcon = False
+        Me.DataGridView1.ShowRowErrors = False
         Me.DataGridView1.Size = New System.Drawing.Size(732, 150)
         Me.DataGridView1.TabIndex = 23
         '

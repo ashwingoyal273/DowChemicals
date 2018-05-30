@@ -51,6 +51,8 @@ Public Class Addchangeusers
             End Try
             Update_display()
         End If
+        txtusername.Text = ""
+        txtpass.Text = ""
         cnn.Close()
     End Sub
 
@@ -58,6 +60,7 @@ Public Class Addchangeusers
         If txtusername.Text = "" Then
             MessageBox.Show(text:="Username cannot be empty while deletion!", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         Else
+
             If Not cnn.State = ConnectionState.Open Then
                 cnn.Open()
             End If
@@ -70,6 +73,7 @@ Public Class Addchangeusers
             End Try
             Update_display()
         End If
+        txtusername.Text = ""
         cnn.Close()
     End Sub
 
@@ -81,5 +85,10 @@ Public Class Addchangeusers
     Private Sub Addchangeusers_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         LoginForm3.Show()
         cnn.Close()
+    End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        txtusername.Text = DataGridView1.CurrentCell.Value.ToString
+        txtpass.Text = ""
     End Sub
 End Class
