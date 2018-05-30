@@ -51,6 +51,7 @@ Public Class Addchangeusers
             End Try
             Update_display()
         End If
+        cnn.Close()
     End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -69,6 +70,7 @@ Public Class Addchangeusers
             End Try
             Update_display()
         End If
+        cnn.Close()
     End Sub
 
     Private Sub Btnclear_Click(sender As Object, e As EventArgs) Handles btnclear.Click
