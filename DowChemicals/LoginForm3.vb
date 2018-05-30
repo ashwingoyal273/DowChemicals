@@ -8,17 +8,18 @@ Public Class LoginForm3
 
 
     Private Sub Btnchng_Click(sender As Object, e As EventArgs) Handles btnchng.Click
-        Dim strpass As String
-        strpass = InputBox("New Password", "Password Change", " ")
-        If strpass = "" Then
-            Exit Sub
-        ElseIf strpass = " " Then
-            MessageBox.Show(text:="Please enter a valid password", caption:=
-                                "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
-        Else
-            My.Settings.pass = strpass
-        End If
-
+        'Dim strpass As String
+        'strpass = InputBox("New Password", "Password Change", " ")
+        'If strpass = "" Then
+        '    Exit Sub
+        'ElseIf strpass = " " Then
+        '    MessageBox.Show(text:="Please enter a valid password", caption:=
+        '                        "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+        'Else
+        '    My.Settings.pass = strpass
+        'End If
+        AdminchangePassword.Show()
+        Me.Hide()
         My.Settings.Save()
     End Sub
 
