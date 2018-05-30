@@ -150,7 +150,7 @@ Partial Class Addchangeusers
         Me.MaximizeBox = False
         Me.Name = "Addchangeusers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Addchangeusers"
+        Me.Text = "Add/Change Users"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

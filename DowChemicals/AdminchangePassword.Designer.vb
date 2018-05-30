@@ -39,7 +39,7 @@ Partial Class AdminchangePassword
         Me.btnback.Location = New System.Drawing.Point(353, 312)
         Me.btnback.Name = "btnback"
         Me.btnback.Size = New System.Drawing.Size(138, 32)
-        Me.btnback.TabIndex = 13
+        Me.btnback.TabIndex = 4
         Me.btnback.Text = "Back"
         Me.btnback.UseVisualStyleBackColor = True
         '
@@ -48,7 +48,7 @@ Partial Class AdminchangePassword
         Me.btnok.Location = New System.Drawing.Point(188, 312)
         Me.btnok.Name = "btnok"
         Me.btnok.Size = New System.Drawing.Size(159, 32)
-        Me.btnok.TabIndex = 11
+        Me.btnok.TabIndex = 3
         Me.btnok.Text = "&Ok"
         Me.btnok.UseVisualStyleBackColor = True
         '
@@ -59,7 +59,7 @@ Partial Class AdminchangePassword
         Me.txtconfirm.Name = "txtconfirm"
         Me.txtconfirm.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtconfirm.Size = New System.Drawing.Size(303, 27)
-        Me.txtconfirm.TabIndex = 9
+        Me.txtconfirm.TabIndex = 2
         '
         'txtnew
         '
@@ -68,7 +68,7 @@ Partial Class AdminchangePassword
         Me.txtnew.Name = "txtnew"
         Me.txtnew.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtnew.Size = New System.Drawing.Size(303, 27)
-        Me.txtnew.TabIndex = 7
+        Me.txtnew.TabIndex = 1
         '
         'txtold
         '
@@ -77,7 +77,7 @@ Partial Class AdminchangePassword
         Me.txtold.Name = "txtold"
         Me.txtold.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtold.Size = New System.Drawing.Size(303, 27)
-        Me.txtold.TabIndex = 5
+        Me.txtold.TabIndex = 0
         '
         'lblconfirm
         '
