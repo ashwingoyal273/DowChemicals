@@ -28,18 +28,12 @@
         "Entry"
         {
         "MsmKey" = "8:_308B26602C60FDCF211CBB7DA5C0AD2E"
-        "OwnerKey" = "8:_9162E2B5C5074730A3E8741A8B3A5981"
+        "OwnerKey" = "8:_BC951E8AE97D4220A105E9E9BE1BC4E0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_334F23DD60FA4F9996719A4199F151CE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9162E2B5C5074730A3E8741A8B3A5981"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -57,14 +51,26 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BC951E8AE97D4220A105E9E9BE1BC4E0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C96E47FACB95B99340337141A04B6291"
-        "OwnerKey" = "8:_9162E2B5C5074730A3E8741A8B3A5981"
+        "OwnerKey" = "8:_BC951E8AE97D4220A105E9E9BE1BC4E0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9162E2B5C5074730A3E8741A8B3A5981"
+        "OwnerKey" = "8:_29E45680DA5A8C97ADB96D536F3BDEC1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BC951E8AE97D4220A105E9E9BE1BC4E0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -77,12 +83,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_308B26602C60FDCF211CBB7DA5C0AD2E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_29E45680DA5A8C97ADB96D536F3BDEC1"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -157,17 +157,17 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_F216DDE6B07143B2AA9C76DAE37D7147"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_6E3092A77F81485E99B2599533C04AEB"
             {
-            "Name" = "8:Primary output from DowChemicals (Debug x64)"
+            "Name" = "8:Primary output from DowChemicals (Release Any CPU)"
             "Condition" = "8:"
-            "Object" = "8:_9162E2B5C5074730A3E8741A8B3A5981"
+            "Object" = "8:_BC951E8AE97D4220A105E9E9BE1BC4E0"
             "FileType" = "3:2"
             "InstallAction" = "3:1"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_A3E2E514_A107_481B_A4BA_0B8BE76F616A"
+            "Identifier" = "8:_36F8227F_6E47_47EB_BCD0_BB9157E00615"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
@@ -424,7 +424,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Red Tag Master"
         "ProductCode" = "8:{BEF5F509-82D5-4666-8883-78B7DCDF47F8}"
-        "PackageCode" = "8:{772052B7-A4CB-4556-9D1F-AA131510B03C}"
+        "PackageCode" = "8:{86A1C007-0ECF-4F4F-9A91-CDE80464EB0D}"
         "UpgradeCode" = "8:{5F9919D8-6656-43A5-BEDA-DA3E8BC985EF}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -544,7 +544,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6EBCEAF8023D4ED08CE602CE5DC57447"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8F7AD9191EA84F718238BB764A896EE3"
             {
             "Name" = "8:Red Tag Master"
             "Arguments" = "8:"
@@ -552,13 +552,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_9162E2B5C5074730A3E8741A8B3A5981"
-            "Folder" = "8:_7BA4032FF18F4A6F8F8B6D25A095150C"
+            "Target" = "8:_BC951E8AE97D4220A105E9E9BE1BC4E0"
+            "Folder" = "8:_BBDD79A54FDB4C7F8BDFC82BB7BAA5BA"
             "WorkingFolder" = "8:_1AFF2DEC06434E8188791128EC2368DF"
             "Icon" = "8:_334F23DD60FA4F9996719A4199F151CE"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B761AE58106042848BFAC4AF3B04DDEF"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C49C880E761C45D9A5889493BB5129D1"
             {
             "Name" = "8:Red Tag Master"
             "Arguments" = "8:"
@@ -566,8 +566,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_9162E2B5C5074730A3E8741A8B3A5981"
-            "Folder" = "8:_BBDD79A54FDB4C7F8BDFC82BB7BAA5BA"
+            "Target" = "8:_BC951E8AE97D4220A105E9E9BE1BC4E0"
+            "Folder" = "8:_7BA4032FF18F4A6F8F8B6D25A095150C"
             "WorkingFolder" = "8:_1AFF2DEC06434E8188791128EC2368DF"
             "Icon" = "8:_334F23DD60FA4F9996719A4199F151CE"
             "Feature" = "8:"
@@ -971,9 +971,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9162E2B5C5074730A3E8741A8B3A5981"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BC951E8AE97D4220A105E9E9BE1BC4E0"
             {
-            "SourcePath" = "8:..\\DowChemicals\\obj\\x64\\Debug\\Red Tag Master.exe"
+            "SourcePath" = "8:..\\DowChemicals\\obj\\Release\\Red Tag Master.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1AFF2DEC06434E8188791128EC2368DF"
@@ -991,7 +991,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Debug|x64"
+            "OutputConfiguration" = "8:Release|Any CPU"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{D21F2341-329A-4AB0-902D-D9B4A237235D}"
             "ShowKeyOutput" = "11:TRUE"
