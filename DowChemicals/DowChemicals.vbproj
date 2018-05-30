@@ -74,7 +74,7 @@
     <ApplicationIcon>logo1_dH4_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -275,6 +275,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.manifest" />
     <None Include="DowChemicals_TemporaryKey.pfx" />
     <None Include="empDataSet.xsc">
       <DependentUpon>empDataSet.xsd</DependentUpon>

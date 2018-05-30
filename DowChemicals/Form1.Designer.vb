@@ -115,7 +115,7 @@ Partial Class Form1
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(129, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(342, 51)
+        Me.Label2.Size = New System.Drawing.Size(443, 51)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Red Tag Master"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
