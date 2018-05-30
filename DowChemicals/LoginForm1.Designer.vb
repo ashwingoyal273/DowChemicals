@@ -94,7 +94,7 @@ Partial Class LoginForm1
         Me.OK.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OK.Location = New System.Drawing.Point(197, 161)
         Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(94, 23)
+        Me.OK.Size = New System.Drawing.Size(94, 32)
         Me.OK.TabIndex = 4
         Me.OK.Text = "&OK"
         '
@@ -104,7 +104,7 @@ Partial Class LoginForm1
         Me.Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel.Location = New System.Drawing.Point(300, 161)
         Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(94, 23)
+        Me.Cancel.Size = New System.Drawing.Size(94, 32)
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Cancel"
         '
@@ -113,7 +113,7 @@ Partial Class LoginForm1
         Me.AcceptButton = Me.OK
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(417, 192)
+        Me.ClientSize = New System.Drawing.Size(417, 201)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
         Me.Controls.Add(Me.txtpass)
