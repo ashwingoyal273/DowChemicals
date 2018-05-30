@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("12345")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("admin")>  _
         Public Property pass() As String
             Get
                 Return CType(Me("pass"),String)
@@ -75,46 +75,6 @@ Namespace My
             Get
                 Return CType(Me("empConnectionString"),String)
             End Get
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("<?xml version=""1.0"" encoding=""utf-16""?>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"<ArrayOfString xmlns:xsi=""http://www.w3."& _ 
-            "org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <s"& _ 
-            "tring>RTM for DT 230 ACT  CCT nozzle cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for DT 230"& _ 
-            ", Ammonia &amp; Biocide nozzle cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for DT 230, C2 n"& _ 
-            "ozzle cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for DT 230, DTP3 &amp; MAT nozzle cleanin"& _ 
-            "g</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for DT 230, LT &amp; RTD cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>"& _ 
-            "RTM for DT 230, Sample point &amp; Rework line nozzle cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <stri"& _ 
-            "ng>RTM for T-1 DT 430 Nozzle LT RTD cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T-1 MAT"& _ 
-            "-1 confined space entry</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T1 new C2 nozzle &amp; AOD p"& _ 
-            "ump inspection</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T1 old C2 nozzle &amp; AOD pump inspe"& _ 
-            "ction</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T1 RXR 401 confined space entry</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <s"& _ 
-            "tring>RTM for C2 226 RXR Top and Bottom nozzle inspection</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RT"& _ 
-            "M for C2 239 RXR Top and Bottom nozzle inspection</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for RX"& _ 
-            "R to DT 230 transfer line inspection</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for RXR to DT 429 t"& _ 
-            "ransfer line inspection</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T-1 DT 430 Confine space ent"& _ 
-            "ry</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T-1 MAT-2 confined space entry</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <strin"& _ 
-            "g>RTM for T-2 DT 230 - VPRV &amp; FA and it's associates lines inspection</strin"& _ 
-            "g>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T-2 DT 429 - VPRV &amp; FA and it's associates lines inspe"& _ 
-            "ction</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T-2 MT-1 - VPRV &amp; FA and it's associates l"& _ 
-            "ines inspection</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T-2 MT-2 - VPRV &amp; FA and it's as"& _ 
-            "sociates lines inspection</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T-2 RXR - VPRV &amp; FA an"& _ 
-            "d it's associates lines inspection</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T2 RXR co-feed no"& _ 
-            "zzle cleaning (RCV201-007)</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T-2 RXR CST nozzle cleani"& _ 
-            "ng</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM for T-2 RXR LT &amp; RTD cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string"& _ 
-            ">RTM of DT 429 ACT &amp; CCT nozzle cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM of DT 429 A"& _ 
-            "mmonia &amp; Biocide nozzle cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM of DT 429 LT &amp; "& _ 
-            "RTD cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM of DT 429 Sample point &amp; Rework point n"& _ 
-            "ozzle cleaning</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>RTM of DT 429 confined space entry</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-            "</ArrayOfString>")>  _
-        Public Property Filelist() As Global.System.Collections.Specialized.StringCollection
-            Get
-                Return CType(Me("Filelist"),Global.System.Collections.Specialized.StringCollection)
-            End Get
-            Set
-                Me("Filelist") = value
-            End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
@@ -146,7 +106,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\ashwi\Desktop\Dow Chemicals International\")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("\\in048ndowd001\TALOJA_ODMS\Data\DCM\DCM RTM list\")>  _
         Public Property rtmpath() As String
             Get
                 Return CType(Me("rtmpath"),String)
