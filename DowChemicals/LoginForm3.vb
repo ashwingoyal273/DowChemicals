@@ -74,14 +74,22 @@ Public Class LoginForm3
 
 
     Private Sub Btnchange_Click(sender As Object, e As EventArgs) Handles btnchangesource.Click
-        Dim rtmpathstr As String = InputBox("Please enter the full master file path" & Environment.NewLine & "A typical file path looks like this:" & Environment.NewLine & "DriveName:\Directory1\Directory2\", "Change File Path", " ")
-        If rtmpathstr = " " Then
-            MessageBox.Show(text:="Please enter a valid File Path", caption:=
-                                "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
-        ElseIf rtmpathstr = "" Then
-            Exit Sub
-        Else
-            My.Settings.rtmpath = rtmpathstr
+        'Dim rtmpathstr As String = InputBox("Please enter the full master file path" & Environment.NewLine & "A typical file path looks like this:" & Environment.NewLine & "DriveName:\Directory1\Directory2\", "Change File Path", " ")
+        'If rtmpathstr = " " Then
+        '    MessageBox.Show(text:="Please enter a valid File Path", caption:=
+        '                        "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+        'ElseIf rtmpathstr = "" Then
+        '    Exit Sub
+        'Else
+        '    My.Settings.rtmpath = rtmpathstr
+        'End If
+        pickersource.Description = "Select RTM Source File Path"
+        Dim sourcestr As String = ""
+        If pickersource.ShowDialog() = DialogResult.OK Then
+            sourcestr = pickersource.SelectedPath
+            sourcestr &= "\"
+            MessageBox.Show(Me, "The RTM file path has successfully been changed to:" & Environment.NewLine & sourcestr, "RTM File Path Change", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            My.Settings.rtmpath = sourcestr
         End If
 
     End Sub
@@ -103,14 +111,23 @@ Public Class LoginForm3
     End Sub
 
     Private Sub Btnsavepath_Click(sender As Object, e As EventArgs) Handles btnsavepath.Click
-        Dim rtmpathstr As String = InputBox("Please enter the full save file path" & Environment.NewLine & "A typical file path looks like this:" & Environment.NewLine & "DriveName:\Directory1\Directory2\", "Change File Path", " ")
-        If rtmpathstr = " " Then
-            MessageBox.Show(text:="Please enter a valid File Path", caption:=
-                                "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
-        ElseIf rtmpathstr = "" Then
-            Exit Sub
-        Else
-            My.Settings.savepath = rtmpathstr
+        'Dim rtmpathstr As String = InputBox("Please enter the full save file path" & Environment.NewLine & "A typical file path looks like this:" & Environment.NewLine & "DriveName:\Directory1\Directory2\", "Change File Path", " ")
+        'If rtmpathstr = " " Then
+        '    MessageBox.Show(text:="Please enter a valid File Path", caption:=
+        '                        "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+        'ElseIf rtmpathstr = "" Then
+        '    Exit Sub
+        'Else
+        '    My.Settings.savepath = rtmpathstr
+        'End If
+        pickersource.Description = "Select RTM Save File Path"
+        Dim savestr As String = ""
+        If pickersource.ShowDialog() = DialogResult.OK Then
+            savestr = pickersource.SelectedPath
+            pickersource.Description = "Select RTM Save File Path"
+            savestr &= "\"
+            MessageBox.Show(Me, "The RTM Save Path has successfully been changed to:" & Environment.NewLine & savestr, "RTM Save File Path Change", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            My.Settings.rtmpath = savestr
         End If
     End Sub
 End Class

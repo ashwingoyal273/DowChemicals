@@ -35,6 +35,7 @@ Partial Class LoginForm3
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnsavepath = New System.Windows.Forms.Button()
         Me.btnviewpath = New System.Windows.Forms.Button()
+        Me.pickersource = New System.Windows.Forms.FolderBrowserDialog()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -201,4 +202,5 @@ Partial Class LoginForm3
     Friend WithEvents Label1 As Label
     Friend WithEvents btnsavepath As Button
     Friend WithEvents btnviewpath As Button
+    Friend WithEvents pickersource As FolderBrowserDialog
 End Class
