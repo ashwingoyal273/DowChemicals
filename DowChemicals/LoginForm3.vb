@@ -125,11 +125,28 @@ Public Class LoginForm3
         Dim savestr As String = ""
         If pickersource.ShowDialog() = DialogResult.OK Then
             savestr = pickersource.SelectedPath
-            pickersource.Description = "Select RTM Save File Path"
             savestr &= "\"
             MessageBox.Show(Me, "The RTM Save Path has successfully been changed to:" & Environment.NewLine & savestr, "RTM Save File Path Change", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             My.Settings.rtmpath = savestr
         End If
+    End Sub
+
+    Private Sub Chngdbpath_Click(sender As Object, e As EventArgs) Handles chngdbpath.Click
+        pickersource.Description = "Select DATABASE File Path"
+        Dim savestr As String = ""
+        If pickersource.ShowDialog() = DialogResult.OK Then
+            savestr = pickersource.SelectedPath
+            savestr &= "\"
+            MessageBox.Show(Me, "The DATABASE File Path has successfully been changed to:" & Environment.NewLine & savestr, "DATABASE Path Change", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            My.Settings.dbpath = savestr
+            AppDomain.CurrentDomain.SetData("DataDirectory", My.Settings.dbpath)
+        End If
+    End Sub
+
+    Private Sub BtnViewDB_Click(sender As Object, e As EventArgs) Handles BtnViewDB.Click
+        Dim viewstr As String = "The DATABASE File Path is:" & Environment.NewLine
+        viewstr &= My.Settings.dbpath & Environment.NewLine
+        MessageBox.Show(Me, viewstr, "System Path Settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
     End Sub
 End Class
 

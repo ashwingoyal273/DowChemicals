@@ -118,7 +118,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\ashwi\Desktop\Dow Chemicals International\")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("\\in048ndowd001\TALOJA_ODMS\Data\DCM\DCM RTM list\")>  _
         Public Property savepath() As String
             Get
                 Return CType(Me("savepath"),String)
@@ -137,6 +137,18 @@ Namespace My
             End Get
             Set
                 Me("firstime") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("\\in048ndowd001\TALOJA_ODMS\Data\DCM\DCM RTM list\")>  _
+        Public Property dbpath() As String
+            Get
+                Return CType(Me("dbpath"),String)
+            End Get
+            Set
+                Me("dbpath") = value
             End Set
         End Property
     End Class

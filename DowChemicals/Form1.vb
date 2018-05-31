@@ -92,8 +92,8 @@ Public Class Form1
                 Exit Sub
             End Try
 
-            System.IO.Directory.CreateDirectory(My.Settings.savepath & DateString & "\")
-            oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & DateString & "\" & ofilename & " Location Listing" & ".docx")
+            System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.UsernameLabel.Text & " " & DateString & "\")
+            oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.UsernameLabel.Text & " " & DateString & "\" & ofilename & " Location Listing" & ".docx")
             Dim equipment As String = "Please fill manually"
                 For Each eqp As String In My.Settings.equipment
                     If ofilename.IndexOf(eqp) <> -1 Then
@@ -141,7 +141,7 @@ Public Class Form1
                 Me.Form1_Load(Me, Nothing)
                 Exit Sub
             End Try
-            oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & DateString & "\" & ofilename & " RTM file" & ".docx")
+            oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.UsernameLabel.Text & " " & DateString & "\" & ofilename & " RTM file" & ".docx")
             'oDoc.Close(Word.WdSaveOptions.wdDoNotSaveChanges)
 
 

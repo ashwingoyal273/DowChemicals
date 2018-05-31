@@ -29,10 +29,13 @@
       <Value Profile="(Default)">\\in048ndowd001\TALOJA_ODMS\Data\DCM\DCM RTM list\</Value>
     </Setting>
     <Setting Name="savepath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\ashwi\Desktop\Dow Chemicals International\</Value>
+      <Value Profile="(Default)">\\in048ndowd001\TALOJA_ODMS\Data\DCM\DCM RTM list\</Value>
     </Setting>
     <Setting Name="firstime" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="dbpath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\in048ndowd001\TALOJA_ODMS\Data\DCM\DCM RTM list\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -13,9 +13,7 @@ Namespace My
                 My.Settings.firstime = False
                 Instructions.Show()
             End If
-            Dim executable As String = System.Reflection.Assembly.GetExecutingAssembly.Location
-            Dim path As String = System.IO.Path.GetDirectoryName(executable)
-            AppDomain.CurrentDomain.SetData("DataDirectory", path)
+            AppDomain.CurrentDomain.SetData("DataDirectory", My.Settings.dbpath)
         End Sub
 
         Private Sub MyApplication_UnhandledException(sender As Object, e As UnhandledExceptionEventArgs) Handles Me.UnhandledException

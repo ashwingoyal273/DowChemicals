@@ -36,6 +36,8 @@ Partial Class LoginForm3
         Me.btnsavepath = New System.Windows.Forms.Button()
         Me.btnviewpath = New System.Windows.Forms.Button()
         Me.pickersource = New System.Windows.Forms.FolderBrowserDialog()
+        Me.chngdbpath = New System.Windows.Forms.Button()
+        Me.BtnViewDB = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -74,7 +76,7 @@ Partial Class LoginForm3
         'btnequipment
         '
         Me.btnequipment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnequipment.Location = New System.Drawing.Point(191, 109)
+        Me.btnequipment.Location = New System.Drawing.Point(191, 82)
         Me.btnequipment.Name = "btnequipment"
         Me.btnequipment.Size = New System.Drawing.Size(90, 38)
         Me.btnequipment.TabIndex = 0
@@ -84,7 +86,7 @@ Partial Class LoginForm3
         'btnchng
         '
         Me.btnchng.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnchng.Location = New System.Drawing.Point(56, 153)
+        Me.btnchng.Location = New System.Drawing.Point(56, 126)
         Me.btnchng.Name = "btnchng"
         Me.btnchng.Size = New System.Drawing.Size(477, 37)
         Me.btnchng.TabIndex = 3
@@ -94,7 +96,7 @@ Partial Class LoginForm3
         'btnadduser
         '
         Me.btnadduser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnadduser.Location = New System.Drawing.Point(56, 196)
+        Me.btnadduser.Location = New System.Drawing.Point(56, 169)
         Me.btnadduser.Name = "btnadduser"
         Me.btnadduser.Size = New System.Drawing.Size(477, 37)
         Me.btnadduser.TabIndex = 4
@@ -104,7 +106,7 @@ Partial Class LoginForm3
         'btnequipmentremove
         '
         Me.btnequipmentremove.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnequipmentremove.Location = New System.Drawing.Point(418, 109)
+        Me.btnequipmentremove.Location = New System.Drawing.Point(418, 82)
         Me.btnequipmentremove.Name = "btnequipmentremove"
         Me.btnequipmentremove.Size = New System.Drawing.Size(115, 38)
         Me.btnequipmentremove.TabIndex = 2
@@ -114,7 +116,7 @@ Partial Class LoginForm3
         'btnchangesource
         '
         Me.btnchangesource.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnchangesource.Location = New System.Drawing.Point(56, 239)
+        Me.btnchangesource.Location = New System.Drawing.Point(56, 212)
         Me.btnchangesource.Name = "btnchangesource"
         Me.btnchangesource.Size = New System.Drawing.Size(185, 37)
         Me.btnchangesource.TabIndex = 5
@@ -124,7 +126,7 @@ Partial Class LoginForm3
         'btnview
         '
         Me.btnview.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnview.Location = New System.Drawing.Point(287, 109)
+        Me.btnview.Location = New System.Drawing.Point(287, 82)
         Me.btnview.Name = "btnview"
         Me.btnview.Size = New System.Drawing.Size(125, 38)
         Me.btnview.TabIndex = 1
@@ -135,7 +137,7 @@ Partial Class LoginForm3
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(62, 118)
+        Me.Label1.Location = New System.Drawing.Point(62, 91)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 20)
         Me.Label1.TabIndex = 6
@@ -144,7 +146,7 @@ Partial Class LoginForm3
         'btnsavepath
         '
         Me.btnsavepath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsavepath.Location = New System.Drawing.Point(247, 239)
+        Me.btnsavepath.Location = New System.Drawing.Point(247, 212)
         Me.btnsavepath.Name = "btnsavepath"
         Me.btnsavepath.Size = New System.Drawing.Size(171, 37)
         Me.btnsavepath.TabIndex = 6
@@ -154,18 +156,40 @@ Partial Class LoginForm3
         'btnviewpath
         '
         Me.btnviewpath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnviewpath.Location = New System.Drawing.Point(424, 238)
+        Me.btnviewpath.Location = New System.Drawing.Point(424, 211)
         Me.btnviewpath.Name = "btnviewpath"
         Me.btnviewpath.Size = New System.Drawing.Size(109, 38)
         Me.btnviewpath.TabIndex = 7
         Me.btnviewpath.Text = "View"
         Me.btnviewpath.UseVisualStyleBackColor = True
         '
+        'chngdbpath
+        '
+        Me.chngdbpath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chngdbpath.Location = New System.Drawing.Point(56, 255)
+        Me.chngdbpath.Name = "chngdbpath"
+        Me.chngdbpath.Size = New System.Drawing.Size(362, 38)
+        Me.chngdbpath.TabIndex = 11
+        Me.chngdbpath.Text = "Change Database Path"
+        Me.chngdbpath.UseVisualStyleBackColor = True
+        '
+        'BtnViewDB
+        '
+        Me.BtnViewDB.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnViewDB.Location = New System.Drawing.Point(424, 255)
+        Me.BtnViewDB.Name = "BtnViewDB"
+        Me.BtnViewDB.Size = New System.Drawing.Size(109, 38)
+        Me.BtnViewDB.TabIndex = 12
+        Me.BtnViewDB.Text = "View"
+        Me.BtnViewDB.UseVisualStyleBackColor = True
+        '
         'LoginForm3
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(616, 450)
+        Me.Controls.Add(Me.BtnViewDB)
+        Me.Controls.Add(Me.chngdbpath)
         Me.Controls.Add(Me.btnviewpath)
         Me.Controls.Add(Me.btnsavepath)
         Me.Controls.Add(Me.Label1)
@@ -203,4 +227,6 @@ Partial Class LoginForm3
     Friend WithEvents btnsavepath As Button
     Friend WithEvents btnviewpath As Button
     Friend WithEvents pickersource As FolderBrowserDialog
+    Friend WithEvents chngdbpath As Button
+    Friend WithEvents BtnViewDB As Button
 End Class
