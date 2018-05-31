@@ -64,12 +64,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_29E45680DA5A8C97ADB96D536F3BDEC1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_BC951E8AE97D4220A105E9E9BE1BC4E0"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -83,6 +77,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_308B26602C60FDCF211CBB7DA5C0AD2E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_29E45680DA5A8C97ADB96D536F3BDEC1"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -424,7 +424,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Red Tag Master"
         "ProductCode" = "8:{BEF5F509-82D5-4666-8883-78B7DCDF47F8}"
-        "PackageCode" = "8:{86A1C007-0ECF-4F4F-9A91-CDE80464EB0D}"
+        "PackageCode" = "8:{76E25587-001C-45DD-BCD8-DA055A11BE43}"
         "UpgradeCode" = "8:{5F9919D8-6656-43A5-BEDA-DA3E8BC985EF}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

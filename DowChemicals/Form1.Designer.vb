@@ -41,6 +41,7 @@ Partial Class Form1
         Me.btnchngpass = New System.Windows.Forms.Button()
         Me.lblusername = New System.Windows.Forms.Label()
         Me.btnlogout = New System.Windows.Forms.Button()
+        Me.Btninstructions = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -216,12 +217,24 @@ Partial Class Form1
         Me.btnlogout.Text = "Logout"
         Me.btnlogout.UseVisualStyleBackColor = True
         '
+        'Btninstructions
+        '
+        Me.Btninstructions.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btninstructions.Location = New System.Drawing.Point(198, 295)
+        Me.Btninstructions.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Btninstructions.Name = "Btninstructions"
+        Me.Btninstructions.Size = New System.Drawing.Size(219, 58)
+        Me.Btninstructions.TabIndex = 17
+        Me.Btninstructions.Text = "Show Instructions"
+        Me.Btninstructions.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(605, 450)
+        Me.Controls.Add(Me.Btninstructions)
         Me.Controls.Add(Me.btnlogout)
         Me.Controls.Add(Me.lblusername)
         Me.Controls.Add(Me.btnchngpass)
@@ -269,5 +282,6 @@ Partial Class Form1
     Friend WithEvents btnchngpass As Button
     Friend WithEvents lblusername As Label
     Friend WithEvents btnlogout As Button
+    Friend WithEvents Btninstructions As Button
 End Class
 

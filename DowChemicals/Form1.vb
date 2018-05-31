@@ -263,5 +263,9 @@ Public Class Form1
         Me.lblusername.Text = "Username: " & Environment.NewLine & Mainlogin.empusername
         txtName.Text = ""
     End Sub
+
+    Private Sub Btninstructions_Click(sender As Object, e As EventArgs) Handles Btninstructions.Click
+        Instructions.Show()
+    End Sub
 End Class
 
