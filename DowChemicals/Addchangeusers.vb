@@ -26,6 +26,7 @@ Public Class Addchangeusers
             End Using
 
         End Using
+        cnn.Close()
     End Sub
 
     Private Sub BtnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
@@ -47,6 +48,7 @@ Public Class Addchangeusers
                 cmd.CommandText = "INSERT INTO employee([username], [password]) " & " VALUES ('" & Me.txtusername.Text & "','" & Me.txtpass.Text & "')"
                 cmd.ExecuteNonQuery()
             Catch ex As System.Data.OleDb.OleDbException
+                Mainlogin.BackgroundWorker1.RunWorkerAsync()
                 MessageBox.Show(text:="Error occured in insertion please check if the username already exists in the database", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             End Try
             Update_display()
@@ -69,6 +71,7 @@ Public Class Addchangeusers
                 cmd.CommandText = "DELETE FROM employee where [username] = '" & txtusername.Text & "'"
                 cmd.ExecuteNonQuery()
             Catch ex As System.Data.OleDb.OleDbException
+                Mainlogin.BackgroundWorker1.RunWorkerAsync()
                 MessageBox.Show(text:="Error occured in deletion please check if the username is in the database", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             End Try
             Update_display()

@@ -38,6 +38,7 @@ Partial Class Mainlogin
         Me.btnFp = New System.Windows.Forms.Button()
         Me.btnadminlogin = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -126,6 +127,10 @@ Partial Class Mainlogin
         Me.btnClose.TabIndex = 5
         Me.btnClose.Text = "Close"
         '
+        'BackgroundWorker1
+        '
+        Me.BackgroundWorker1.WorkerSupportsCancellation = True
+        '
         'Mainlogin
         '
         Me.AcceptButton = Me.OK
@@ -157,4 +162,5 @@ Partial Class Mainlogin
     Friend WithEvents btnFp As Button
     Friend WithEvents btnadminlogin As Button
     Friend WithEvents btnClose As Button
+    Public WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

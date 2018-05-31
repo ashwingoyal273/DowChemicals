@@ -27,13 +27,13 @@ Public Class Userchangepassword
             End Using
         End Using
         If flag = True Then
+            Mainlogin.BackgroundWorker1.RunWorkerAsync()
             MessageBox.Show(text:="Username and Password combination is wrong", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
-            cnn.Close()
             Exit Sub
         End If
         If StrComp(txtnew.Text, txtconfirm.Text) <> 0 Then
+            Mainlogin.BackgroundWorker1.RunWorkerAsync()
             MessageBox.Show(text:="New Passwords do not match", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
-            cnn.Close()
             Exit Sub
         End If
         cmd.CommandText = "UPDATE employee SET [password] ='" & txtconfirm.Text & "' WHERE [username] ='" & Mainlogin.empusername & "' AND [password] ='" & txtold.Text & "'"

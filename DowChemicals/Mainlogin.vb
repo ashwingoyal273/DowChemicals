@@ -21,8 +21,9 @@ Public Class Mainlogin
                     cnn.Close()
                     Me.Hide()
                 Else
+                    BackgroundWorker1.RunWorkerAsync()
                     MessageBox.Show("The username or password entered is incorrect!", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
-                    cnn.Close()
+
                 End If
             End Using
         End Using
@@ -57,5 +58,9 @@ Public Class Mainlogin
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Application.Exit()
+    End Sub
+
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        If cnn.State = ConnectionState.Open Then cnn.Close()
     End Sub
 End Class
