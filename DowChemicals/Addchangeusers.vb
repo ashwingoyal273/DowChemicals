@@ -10,23 +10,28 @@ Public Class Addchangeusers
 
     Private Sub Update_display()
 
+        Try
 
-        If Not cnn.State = ConnectionState.Open Then
-            cnn.Open()
-        End If
-        cmd.Connection = cnn
-        cmd.CommandText = "SELECT [username] FROM employee"
-        Using sda As New OleDb.OleDbDataAdapter(cmd)
-            Using dt As New DataTable
-                sda.Fill(dt)
-                DataGridView1.ReadOnly = True
-                DataGridView1.AutoResizeColumns()
-                DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-                DataGridView1.DataSource = dt
+            If Not cnn.State = ConnectionState.Open Then
+                cnn.Open()
+            End If
+            cmd.Connection = cnn
+            cmd.CommandText = "SELECT [username] FROM employee"
+            Using sda As New OleDb.OleDbDataAdapter(cmd)
+                Using dt As New DataTable
+                    sda.Fill(dt)
+                    DataGridView1.ReadOnly = True
+                    DataGridView1.AutoResizeColumns()
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                    DataGridView1.DataSource = dt
+                End Using
+
             End Using
-
-        End Using
-        cnn.Close()
+            cnn.Close()
+        Catch ex As OleDb.OleDbException
+            MessageBox.Show("COULD NOT CONNECT TO DATABASE" & Environment.NewLine & ex.Message, "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+            Me.Close()
+        End Try
     End Sub
 
     Private Sub BtnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
