@@ -23,22 +23,19 @@ Public Class Form1
             Dim oDoc As Word.Document
             Dim oDoc1 As Word.Document = Nothing
             Dim opath1 As String = My.Settings.rtmpath
-            'If StrComp(cbxarea.SelectedItem, "Production") = 0 Then
-            '    opath &= "Production\"
-            '    If StrComp(cbxsubarea.SelectedItem, "T1") = 0 Then
-            '        opath &= "T1\"
-            '    ElseIf StrComp(cbxsubarea.SelectedItem, "T2") = 0 Then
-            '        opath &= "T2\"
-            '    ElseIf StrComp(cbxsubarea.SelectedItem, "PE") = 0 Then
-            '        opath &= "PE\"
-            '    ElseIf StrComp(cbxsubarea.SelectedItem, "PU") = 0 Then
-            '        opath &= "PU\"
-            '    End If
-
             Dim ofilename As String = jobscope
             Dim ctr As Integer = 1
             oWord = Nothing
             oDoc = Nothing
+            Dim objapp As Excel.Application
+            Dim objbook As Excel._Workbook
+            objapp = CreateObject("Excel.Application")
+            objbook = objapp.Workbooks.Add(My.Settings.rtmpath & "Tag.xlsx")
+            objapp.Visible = True
+            Dim objsheet As Excel._Worksheet
+            objsheet = objbook.Sheets.Item(1)
+            Dim rng As Excel.Range = Nothing
+            Dim locationlisting(50) As String
             Try
                 oWord = CreateObject("Word.Application")
                 oDoc = oWord.Documents.Add(opath & ofilename & ".docx")
@@ -67,10 +64,10 @@ Public Class Form1
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
 
-
                 Dim n As String = oDoc.Tables.Item(1).Cell(7 + ctr, 2).Range.Text
                 n = Mid(n, 1, Len(n) - 1)
                 Do Until String.IsNullOrEmpty(n) = True Or String.IsNullOrWhiteSpace(n) = True
+                    locationlisting(ctr - 1) = n
                     ctr += 1
                     n = oDoc.Tables.Item(1).Cell(7 + ctr, 2).Range.Text
                     n = Mid(n, 1, Len(n) - 1)
@@ -91,9 +88,20 @@ Public Class Form1
                 Me.Form1_Load(Me, Nothing)
                 Exit Sub
             End Try
-
-            System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.UsernameLabel.Text & " " & DateString & "\")
-            oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.UsernameLabel.Text & " " & DateString & "\" & ofilename & " Location Listing" & ".docx")
+            For i = 2 To ctr + 1
+                rng = objsheet.Range("A" & i)
+                rng.Value2 = jobscope
+                rng = objsheet.Range("B" & i)
+                rng.Value2 = txtName.Text
+                rng = objsheet.Range("C" & i)
+                rng.Value2 = redtagmaster
+                rng = objsheet.Range("D" & i)
+                rng.Value2 = locationlisting(i - 2)
+                rng = objsheet.Range("E" & i)
+                rng.Value2 = redtagmaster & "A" & i - 1
+            Next
+            System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\")
+            oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & ofilename & " Location Listing" & ".docx")
             Dim equipment As String = "Please fill manually"
                 For Each eqp As String In My.Settings.equipment
                     If ofilename.IndexOf(eqp) <> -1 Then
@@ -141,7 +149,7 @@ Public Class Form1
                 Me.Form1_Load(Me, Nothing)
                 Exit Sub
             End Try
-            oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.UsernameLabel.Text & " " & DateString & "\" & ofilename & " RTM file" & ".docx")
+            oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & ofilename & " RTM file" & ".docx")
             'oDoc.Close(Word.WdSaveOptions.wdDoNotSaveChanges)
 
 

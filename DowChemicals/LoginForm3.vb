@@ -127,7 +127,7 @@ Public Class LoginForm3
             savestr = pickersource.SelectedPath
             savestr &= "\"
             MessageBox.Show(Me, "The RTM Save Path has successfully been changed to:" & Environment.NewLine & savestr, "RTM Save File Path Change", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-            My.Settings.rtmpath = savestr
+            My.Settings.savepath = savestr
         End If
     End Sub
 

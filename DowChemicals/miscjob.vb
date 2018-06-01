@@ -66,8 +66,8 @@ Public Class miscjob
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
             Next
-            System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.UsernameLabel.Text & " " & DateString & "\")
-            oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.UsernameLabel.Text & " " & DateString & "\" & jobscope & " Location Listing" & ".docx")
+            System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\")
+            oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " Location Listing" & ".docx")
             Dim equipment As String = txtequipment.Text
             Dim oDoc1 As Word.Document
             oDoc1 = oWord.Documents.Add(opath & "RTM master file" & ".docx")
@@ -99,7 +99,7 @@ Public Class miscjob
                 .Text &= DateString
                 .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
             End With
-            oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.UsernameLabel.Text & " " & DateString & "\" & jobscope & " RTM file" & ".docx")
+            oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " RTM file" & ".docx")
         End If
     End Sub
 
