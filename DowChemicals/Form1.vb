@@ -31,9 +31,10 @@ Public Class Form1
             Dim objbook As Excel._Workbook
             objapp = CreateObject("Excel.Application")
             objbook = objapp.Workbooks.Add(My.Settings.rtmpath & "Tag.xlsx")
-            objapp.Visible = True
             Dim objsheet As Excel._Worksheet
             objsheet = objbook.Sheets.Item(1)
+            Dim objsheet1 As Excel._Worksheet
+            objsheet1 = objbook.Sheets.Item(2)
             Dim rng As Excel.Range = Nothing
             Dim locationlisting(50) As String
             Try
@@ -88,18 +89,9 @@ Public Class Form1
                 Me.Form1_Load(Me, Nothing)
                 Exit Sub
             End Try
-            For i = 2 To ctr + 1
-                rng = objsheet.Range("A" & i)
-                rng.Value2 = jobscope
-                rng = objsheet.Range("B" & i)
-                rng.Value2 = txtName.Text
-                rng = objsheet.Range("C" & i)
-                rng.Value2 = redtagmaster
-                rng = objsheet.Range("D" & i)
-                rng.Value2 = locationlisting(i - 2)
-                rng = objsheet.Range("E" & i)
-                rng.Value2 = redtagmaster & "A" & i - 1
-            Next
+
+
+
             System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\")
             oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & ofilename & " Location Listing" & ".docx")
             Dim equipment As String = "Please fill manually"
@@ -151,9 +143,33 @@ Public Class Form1
             End Try
             oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & ofilename & " RTM file" & ".docx")
             'oDoc.Close(Word.WdSaveOptions.wdDoNotSaveChanges)
-
-
-
+            objapp.Visible = True
+            rng = objsheet.Range("A2:E100")
+            rng.Clear()
+            For i = 2 To ctr + 1
+                rng = objsheet.Range("A" & i)
+                rng.Value2 = jobscope
+                rng = objsheet.Range("B" & i)
+                rng.Value2 = txtName.Text
+                rng = objsheet.Range("C" & i)
+                rng.Value2 = redtagmaster
+                rng = objsheet.Range("D" & i)
+                rng.Value2 = locationlisting(i - 2)
+                rng = objsheet.Range("E" & i)
+                rng.Value2 = redtagmaster & "A" & i - 1
+                rng = objsheet1.Range("A7")
+                rng.Value2 = jobscope
+                rng = objsheet1.Range("B18")
+                rng.Value2 = txtName.Text
+                rng = objsheet1.Range("B19")
+                rng.Value2 = redtagmaster
+                rng = objsheet1.Range("A22")
+                rng.Value2 = locationlisting(i - 2)
+                rng = objsheet1.Range("B27")
+                rng.Value2 = redtagmaster & "A" & i - 1
+                objsheet1.PrintOutEx()
+            Next
+            MsgBox("Done Printing")
         End If
 
     End Sub
