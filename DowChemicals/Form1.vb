@@ -30,7 +30,7 @@ Public Class Form1
             Dim objapp As Excel.Application
             Dim objbook As Excel._Workbook
             objapp = CreateObject("Excel.Application")
-            objbook = objapp.Workbooks.Add(My.Settings.rtmpath & "Tag.xlsx")
+            objbook = objapp.Workbooks.Add(Environment.CurrentDirectory.ToString & "\Tag.xlsx")
             Dim objsheet As Excel._Worksheet
             objsheet = objbook.Sheets.Item(1)
             Dim objsheet1 As Excel._Worksheet
@@ -169,7 +169,7 @@ Public Class Form1
                 rng.Value2 = redtagmaster & "A" & i - 1
                 objsheet1.PrintOutEx()
             Next
-            MsgBox("Done Printing")
+            MessageBox.Show(Me, "Please collect the Print Outs", "Information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         End If
 
     End Sub
