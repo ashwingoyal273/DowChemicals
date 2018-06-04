@@ -33,10 +33,8 @@ Public Class Form1
             objbook = objapp.Workbooks.Add(Environment.CurrentDirectory.ToString & "\Tag.xlsx")
             Dim objsheet As Excel._Worksheet
             objsheet = objbook.Sheets.Item(1)
-            Dim objsheet1 As Excel._Worksheet
-            objsheet1 = objbook.Sheets.Item(2)
             Dim rng As Excel.Range = Nothing
-            Dim locationlisting(50) As String
+            Dim locationlisting(100) As String
             Try
                 oWord = CreateObject("Word.Application")
                 oDoc = oWord.Documents.Add(opath & ofilename & ".docx")
@@ -143,33 +141,31 @@ Public Class Form1
             End Try
             oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & ofilename & " RTM file" & ".docx")
             'oDoc.Close(Word.WdSaveOptions.wdDoNotSaveChanges)
-            objapp.Visible = True
-            rng = objsheet.Range("A2:E100")
-            rng.Clear()
-            For i = 2 To ctr + 1
-                rng = objsheet.Range("A" & i)
-                rng.Value2 = jobscope
-                rng = objsheet.Range("B" & i)
-                rng.Value2 = txtName.Text
-                rng = objsheet.Range("C" & i)
-                rng.Value2 = redtagmaster
-                rng = objsheet.Range("D" & i)
-                rng.Value2 = locationlisting(i - 2)
-                rng = objsheet.Range("E" & i)
-                rng.Value2 = redtagmaster & "A" & i - 1
-                rng = objsheet1.Range("A7")
-                rng.Value2 = jobscope
-                rng = objsheet1.Range("B18")
-                rng.Value2 = txtName.Text
-                rng = objsheet1.Range("B19")
-                rng.Value2 = redtagmaster
-                rng = objsheet1.Range("A22")
-                rng.Value2 = locationlisting(i - 2)
-                rng = objsheet1.Range("B27")
-                rng.Value2 = redtagmaster & "A" & i - 1
-                objsheet1.PrintOutEx()
-            Next
-            MessageBox.Show(Me, "Please collect the Print Outs", "Information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            Dim prompt = MessageBox.Show(Me, "Please Review the RTM MASTER FILE and the RTM LOCATION LISTING FILE" & Environment.NewLine & "Prints will be generated as soon as you click OK", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk)
+            If prompt = DialogResult.OK Then
+                objapp.Visible = True
+                For i = 2 To ctr + 1
+                    rng = objsheet.Range("A7")
+                    rng.Value2 = jobscope
+                    rng = objsheet.Range("B18")
+                    rng.Value2 = txtName.Text
+                    rng = objsheet.Range("B19")
+                    rng.Value2 = redtagmaster
+                    rng = objsheet.Range("A22")
+                    rng.Value2 = locationlisting(i - 2)
+                    rng = objsheet.Range("B27")
+                    rng.Value2 = redtagmaster & "A" & i - 1
+                    objsheet.PrintOutEx()
+                Next
+                objbook.Close(False)
+                objapp.Quit()
+                GC.Collect()
+                GC.WaitForPendingFinalizers()
+                Me.TopMost = True
+                MessageBox.Show(Me, "Please collect the Print Outs", "Information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+
+            End If
+
         End If
 
     End Sub

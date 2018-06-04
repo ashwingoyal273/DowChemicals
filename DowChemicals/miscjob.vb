@@ -35,71 +35,117 @@ Public Class miscjob
             Dim jobscope As String = txtJob.Text
             Dim oWord As Word.Application
             Dim oDoc As Word.Document
+            Dim objapp As Excel.Application
+            Dim objbook As Excel._Workbook
+            objapp = CreateObject("Excel.Application")
+            objbook = objapp.Workbooks.Add(Environment.CurrentDirectory.ToString & "\Tag.xlsx")
+            Dim objsheet As Excel._Worksheet
+            objsheet = objbook.Sheets.Item(1)
+            Dim rng As Excel.Range = Nothing
             Dim opath As String = My.Settings.rtmpath
-            oWord = CreateObject("Word.Application")
-            oDoc = oWord.Documents.Add(opath & "0605_IOES_LocationListingRTM" & ".docx")
-            oWord.Visible = True
-
-            With oDoc.Tables.Item(1).Cell(3, 1).Range
-                .Text &= redtagmaster
-                .Font.Size = 9
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            With oDoc.Tables.Item(1).Cell(3, 2).Range
-                .Text &= DateString
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            With oDoc.Tables.Item(1).Cell(4, 2).Range
-                .Text = "SCOPE OF WORK And REASON(S) WHY WORK Is BEING DONE: " & Environment.NewLine & jobscope
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            With oDoc.Tables.Item(1).Cell(5, 1).Range
-                .Text &= txtName.Text
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-
             Dim ctr As Integer = txtnooftags.Text
-            For i = 1 To ctr
-                With oDoc.Tables.Item(1).Cell(7 + i, 1).Range
-                    .Text = redtagmaster & "A" & i
+            Dim prompt = MessageBox.Show(Me, "Please input the Location listings one by one in the subsequent Input Boxes", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk)
+            If prompt = DialogResult.OK Then
+                Dim locationlisting(100) As String
+                For i = 1 To ctr
+                    locationlisting(i - 1) = InputBox("Please input the LOCATION LISTING NUMBER " & i, "LOCATION LISTING " & i)
+                Next
+                oWord = CreateObject("Word.Application")
+                oDoc = oWord.Documents.Add(opath & "0605_IOES_LocationListingRTM" & ".docx")
+                oWord.Visible = True
+
+
+
+                With oDoc.Tables.Item(1).Cell(3, 1).Range
+                    .Text &= redtagmaster
                     .Font.Size = 9
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
-            Next
-            System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\")
-            oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " Location Listing" & ".docx")
-            Dim equipment As String = txtequipment.Text
-            Dim oDoc1 As Word.Document
-            oDoc1 = oWord.Documents.Add(opath & "RTM master file" & ".docx")
-            With oDoc1.Tables.Item(1).Cell(1, 2).Range
-                .Text = redtagmaster
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            With oDoc1.Tables.Item(2).Cell(1, 1).Range
-                .Text &= ctr
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            With oDoc1.Tables.Item(2).Cell(1, 2).Range
-                .Text &= equipment
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            With oDoc1.Tables.Item(2).Cell(2, 1).Range
-                .Text &= jobscope
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            With oDoc1.Tables.Item(2).Cell(5, 1).Range
-                .Text &= jobscope
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            With oDoc1.Tables.Item(2).Cell(18, 1).Range
-                .Text &= txtName.Text
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            With oDoc1.Tables.Item(2).Cell(18, 2).Range
-                .Text &= DateString
-                .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            End With
-            oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " RTM file" & ".docx")
+                With oDoc.Tables.Item(1).Cell(3, 2).Range
+                    .Text &= DateString
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+                With oDoc.Tables.Item(1).Cell(4, 2).Range
+                    .Text = "SCOPE OF WORK And REASON(S) WHY WORK Is BEING DONE: " & Environment.NewLine & jobscope
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+                With oDoc.Tables.Item(1).Cell(5, 1).Range
+                    .Text &= txtName.Text
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+
+
+                For i = 1 To ctr
+                    With oDoc.Tables.Item(1).Cell(7 + i, 2).Range
+                        .Text = locationlisting(i - 1)
+                        .Font.Size = 10
+                        .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                    End With
+                    With oDoc.Tables.Item(1).Cell(7 + i, 1).Range
+                        .Text = redtagmaster & "A" & i
+                        .Font.Size = 9
+                        .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                    End With
+                Next
+                System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\")
+                oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " Location Listing" & ".docx")
+                Dim equipment As String = txtequipment.Text
+                Dim oDoc1 As Word.Document
+                oDoc1 = oWord.Documents.Add(opath & "RTM master file" & ".docx")
+                With oDoc1.Tables.Item(1).Cell(1, 2).Range
+                    .Text = redtagmaster
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+                With oDoc1.Tables.Item(2).Cell(1, 1).Range
+                    .Text &= ctr
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+                With oDoc1.Tables.Item(2).Cell(1, 2).Range
+                    .Text &= equipment
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+                With oDoc1.Tables.Item(2).Cell(2, 1).Range
+                    .Text &= jobscope
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+                With oDoc1.Tables.Item(2).Cell(5, 1).Range
+                    .Text &= jobscope
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+                With oDoc1.Tables.Item(2).Cell(18, 1).Range
+                    .Text &= txtName.Text
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+                With oDoc1.Tables.Item(2).Cell(18, 2).Range
+                    .Text &= DateString
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
+                oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " RTM file" & ".docx")
+
+                prompt = MessageBox.Show(Me, "Please Review the RTM MASTER FILE and the RTM LOCATION LISTING FILE" & Environment.NewLine & "Prints will be generated as soon as you click OK", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk)
+                If prompt = DialogResult.OK Then
+                    objapp.Visible = True
+                    For i = 2 To ctr + 1
+                        rng = objsheet.Range("A7")
+                        rng.Value2 = jobscope
+                        rng = objsheet.Range("B18")
+                        rng.Value2 = txtName.Text
+                        rng = objsheet.Range("B19")
+                        rng.Value2 = redtagmaster
+                        rng = objsheet.Range("A22")
+                        rng.Value2 = locationlisting(i - 2)
+                        rng = objsheet.Range("B27")
+                        rng.Value2 = redtagmaster & "A" & i - 1
+                        objsheet.PrintOutEx()
+                    Next
+                    objbook.Close(False)
+                    objapp.Quit()
+                    GC.Collect()
+                    GC.WaitForPendingFinalizers()
+                    Me.TopMost = True
+                    MessageBox.Show(Me, "Please collect the Print Outs", "Information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+                End If
+            End If
         End If
     End Sub
 
