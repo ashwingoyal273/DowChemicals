@@ -33,8 +33,8 @@ Public Class miscjob
             ' year.ToString("D4") &
             Dim redtagmaster As String = month.ToString("D2") & day.ToString("D2") & hour.ToString("D2") & min.ToString("D2") & sec.ToString("D2")
             Dim jobscope As String = txtJob.Text
-            Dim oWord As Word.Application
-            Dim oDoc As Word.Document
+            Dim oWord As Word.Application = Nothing
+            Dim oDoc As Word.Document = Nothing
             Dim objapp As Excel.Application = Nothing
             Dim objbook As Excel._Workbook = Nothing
             Dim objsheet As Excel._Worksheet = Nothing
@@ -47,10 +47,13 @@ Public Class miscjob
                 For i = 1 To ctr
                     locationlisting(i - 1) = InputBox("Please input the LOCATION LISTING NUMBER " & i, "LOCATION LISTING " & i)
                 Next
-                oWord = CreateObject("Word.Application")
-                oDoc = oWord.Documents.Add(opath & "0605_IOES_LocationListingRTM" & ".docx")
-                oWord.Visible = True
-
+                Try
+                    oWord = CreateObject("Word.Application")
+                    oDoc = oWord.Documents.Add(opath & "0605_IOES_LocationListingRTM" & ".docx")
+                    oWord.Visible = True
+                Catch ex As Exception
+                    MessageBox.Show(Me, "Error opening the File named: 0605_IOES_LocationListingRTM.docx " & Environment.NewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
 
 
                 With oDoc.Tables.Item(1).Cell(3, 1).Range
@@ -72,17 +75,26 @@ Public Class miscjob
                 End With
 
 
-                For i = 1 To ctr
-                    With oDoc.Tables.Item(1).Cell(7 + i, 2).Range
-                        .Text = locationlisting(i - 1)
-                        .Font.Size = 10
-                        .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-                    End With
-                    With oDoc.Tables.Item(1).Cell(7 + i, 1).Range
-                        .Text = redtagmaster & "A" & i
-                        .Font.Size = 9
-                        .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-                    End With
+                For i = 0 To ctr
+                    If i = 0 Then
+                        With oDoc.Tables.Item(1).Cell(7 + i, 1).Range
+                            .Cells.SetWidth(93, Word.WdRulerStyle.wdAdjustFirstColumn)
+                        End With
+                    Else
+                        With oDoc.Tables.Item(1).Cell(7 + i, 2).Range
+                            .Text = locationlisting(i - 1)
+                            .Font.Size = 12
+                            .Font.Name = "Calibri"
+                            .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                        End With
+                        With oDoc.Tables.Item(1).Cell(7 + i, 1).Range
+                            .Text = redtagmaster & "A" & i
+                            .Cells.SetWidth(93, Word.WdRulerStyle.wdAdjustFirstColumn)
+                            .Bold = True
+                            .Font.Size = 11
+                            .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                        End With
+                    End If
                 Next
                 Try
                     System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\")
@@ -103,26 +115,32 @@ Public Class miscjob
                 End With
                 With oDoc1.Tables.Item(2).Cell(1, 1).Range
                     .Text &= ctr
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(1, 2).Range
                     .Text &= equipment
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(2, 1).Range
                     .Text &= jobscope
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(5, 1).Range
                     .Text &= jobscope
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(18, 1).Range
                     .Text &= txtName.Text
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(18, 2).Range
                     .Text &= DateString
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 Try

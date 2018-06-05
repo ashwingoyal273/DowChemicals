@@ -41,6 +41,7 @@ Public Class Form1
                 jobscope = jobscope.Replace("RTM for ", "")
             Catch ex As Exception
                 MessageBox.Show(Me, "Error opening the RTM file:" & Environment.NewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
             End Try
 
             Try
@@ -92,6 +93,7 @@ Public Class Form1
                         End With
                         With oDoc.Tables.Item(1).Cell(7 + i, 2).Range
                             .Font.Size = 12
+                            .Font.Name = "Calibri"
                         End With
                     End If
                 Next
@@ -112,6 +114,7 @@ Public Class Form1
                 MessageBox.Show(Me, "The RTM FILES could not be saved!" & Environment.NewLine & "Please check if the save path exists: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 oDoc.ActiveWindow.Close(False)
                 oWord.Quit()
+                Exit Sub
             End Try
             Dim equipment As String = "Please fill manually"
                 For Each eqp As String In My.Settings.equipment
@@ -170,8 +173,9 @@ Public Class Form1
                 oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " RTM file" & ".docx")
             Catch ex As Exception
                 MessageBox.Show(Me, "The RTM FILES could not be saved!" & Environment.NewLine & "Please check if the save path exists: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                oDoc.ActiveWindow.Close()
+                oDoc.ActiveWindow.Close(False)
                 oWord.Quit()
+                Exit Sub
             End Try
             Dim prompt = MessageBox.Show(Me, "Please Review the RTM MASTER FILE and the RTM LOCATION LISTING FILE" & Environment.NewLine & "Prints will be generated as soon as you click OK", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk)
             If prompt = DialogResult.OK Then
