@@ -41,10 +41,11 @@ Public Class Addchangeusers
     End Sub
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        If txtusername.Text = "" Or txtpass.Text = "" Then
+        If txtusername.Text = "" Or txtpass.Text = "" Or txtconfirm.Text = "" Then
             MessageBox.Show(text:="Username and password cannot be empty!", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+        ElseIf StrComp(txtconfirm.Text, txtpass.Text, vbBinaryCompare) <> 0 Then
+            MessageBox.Show(Me, text:="Passwords do not match!", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         Else
-
             If Not cnn.State = ConnectionState.Open Then
                 cnn.Open()
             End If
@@ -57,6 +58,7 @@ Public Class Addchangeusers
                 MessageBox.Show(text:="Error occured in insertion please check if the username already exists in the database", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             End Try
             Update_display()
+            MessageBox.Show(Me, "User Successfully added into the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         End If
         txtusername.Text = ""
         txtpass.Text = ""
@@ -73,13 +75,14 @@ Public Class Addchangeusers
             End If
             cmd.Connection = cnn
             Try
-                cmd.CommandText = "DELETE FROM employee where [username] = '" & txtusername.Text & "'"
+                cmd.CommandText = "DELETE FROM employee where strcomp([username],'" & txtusername.Text & "',0) = 0"
                 cmd.ExecuteNonQuery()
             Catch ex As System.Data.OleDb.OleDbException
                 Mainlogin.BackgroundWorker1.RunWorkerAsync()
                 MessageBox.Show(text:="Error occured in deletion please check if the username is in the database", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             End Try
             Update_display()
+            MessageBox.Show(Me, "User Successfully deleted from the database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         End If
         txtusername.Text = ""
         cnn.Close()

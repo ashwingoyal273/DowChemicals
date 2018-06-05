@@ -33,6 +33,8 @@ Partial Class Addchangeusers
         Me.lblpass = New System.Windows.Forms.Label()
         Me.btnclear = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.txtconfirm = New System.Windows.Forms.TextBox()
+        Me.lblconfirm = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,14 +60,14 @@ Partial Class Addchangeusers
         '
         'txtusername
         '
-        Me.txtusername.Location = New System.Drawing.Point(124, 74)
+        Me.txtusername.Location = New System.Drawing.Point(187, 76)
         Me.txtusername.Name = "txtusername"
         Me.txtusername.Size = New System.Drawing.Size(205, 22)
         Me.txtusername.TabIndex = 14
         '
         'txtpass
         '
-        Me.txtpass.Location = New System.Drawing.Point(124, 113)
+        Me.txtpass.Location = New System.Drawing.Point(187, 113)
         Me.txtpass.Name = "txtpass"
         Me.txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpass.Size = New System.Drawing.Size(205, 22)
@@ -74,9 +76,9 @@ Partial Class Addchangeusers
         'btnAdd
         '
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(352, 74)
+        Me.btnAdd.Location = New System.Drawing.Point(411, 74)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(393, 40)
+        Me.btnAdd.Size = New System.Drawing.Size(334, 40)
         Me.btnAdd.TabIndex = 18
         Me.btnAdd.Text = "Insert User"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -84,9 +86,9 @@ Partial Class Addchangeusers
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(352, 120)
+        Me.btnDelete.Location = New System.Drawing.Point(411, 120)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(393, 40)
+        Me.btnDelete.Size = New System.Drawing.Size(334, 40)
         Me.btnDelete.TabIndex = 19
         Me.btnDelete.Text = "Delete User"
         Me.btnDelete.UseVisualStyleBackColor = True
@@ -105,7 +107,7 @@ Partial Class Addchangeusers
         '
         Me.lblpass.AutoSize = True
         Me.lblpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblpass.Location = New System.Drawing.Point(18, 113)
+        Me.lblpass.Location = New System.Drawing.Point(15, 113)
         Me.lblpass.Name = "lblpass"
         Me.lblpass.Size = New System.Drawing.Size(91, 20)
         Me.lblpass.TabIndex = 21
@@ -114,7 +116,7 @@ Partial Class Addchangeusers
         'btnclear
         '
         Me.btnclear.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnclear.Location = New System.Drawing.Point(207, 143)
+        Me.btnclear.Location = New System.Drawing.Point(411, 166)
         Me.btnclear.Name = "btnclear"
         Me.btnclear.Size = New System.Drawing.Size(122, 37)
         Me.btnclear.TabIndex = 22
@@ -142,11 +144,31 @@ Partial Class Addchangeusers
         Me.DataGridView1.Size = New System.Drawing.Size(732, 150)
         Me.DataGridView1.TabIndex = 23
         '
+        'txtconfirm
+        '
+        Me.txtconfirm.Location = New System.Drawing.Point(187, 156)
+        Me.txtconfirm.Name = "txtconfirm"
+        Me.txtconfirm.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtconfirm.Size = New System.Drawing.Size(205, 22)
+        Me.txtconfirm.TabIndex = 24
+        '
+        'lblconfirm
+        '
+        Me.lblconfirm.AutoSize = True
+        Me.lblconfirm.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblconfirm.Location = New System.Drawing.Point(15, 156)
+        Me.lblconfirm.Name = "lblconfirm"
+        Me.lblconfirm.Size = New System.Drawing.Size(163, 20)
+        Me.lblconfirm.TabIndex = 25
+        Me.lblconfirm.Text = "Confirm Password"
+        '
         'Addchangeusers
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lblconfirm)
+        Me.Controls.Add(Me.txtconfirm)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnclear)
         Me.Controls.Add(Me.lblpass)
@@ -178,4 +200,6 @@ Partial Class Addchangeusers
     Friend WithEvents lblpass As Label
     Friend WithEvents btnclear As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtconfirm As TextBox
+    Friend WithEvents lblconfirm As Label
 End Class
