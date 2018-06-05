@@ -24,6 +24,7 @@ Public Class AccessInstallationCode
     End Sub
 
     Private Sub AccessInstallationCode_AfterInstall(ByVal sender As Object, ByVal e As System.Configuration.Install.InstallEventArgs) Handles Me.AfterInstall
+        My.Settings.Reset()
         If Not Environment.Is64BitOperatingSystem Then AccessComponentFile = "AccessDatabaseEngine.exe"
         Dim str As String = System.Reflection.Assembly.GetExecutingAssembly().Location
         Dim ex As Exception
@@ -78,7 +79,6 @@ Public Class AccessInstallationCode
         FileName2 = "C:\Program Files (x86)\Common Files\microsoft shared\OFFICE12\ACECORE.DLL"
 
         If File.Exists(FileName1) Or File.Exists(FileName2) Then
-            'MsgBox("ITS ALREADY INSTALLED YOU DUMB ASS")
             Return True
         Else
             Return False

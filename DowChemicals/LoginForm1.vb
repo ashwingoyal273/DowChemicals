@@ -5,7 +5,8 @@ Public Class LoginForm1
     Dim password = My.Settings.pass
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        If StrComp(txtusername.Text, username) = 0 And StrComp(txtpass.Text, password) = 0 Then
+        password = My.Settings.pass
+        If StrComp(txtusername.Text, username, vbBinaryCompare) = 0 And StrComp(txtpass.Text, password, vbBinaryCompare) = 0 Then
             LoginForm3.Show()
             Me.Hide()
         Else
@@ -35,4 +36,9 @@ Public Class LoginForm1
         txtpass.Text = ""
 
     End Sub
+
+    Private Sub Btninstructions_Click(sender As Object, e As EventArgs) Handles Btninstructions.Click
+        Instructions.Show()
+    End Sub
+
 End Class

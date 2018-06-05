@@ -27,6 +27,9 @@ Partial Class Instructions
         Me.PicBoxlogo = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnOk = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnreset = New System.Windows.Forms.Button()
         CType(Me.PicBoxlogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -59,7 +62,7 @@ Partial Class Instructions
         Me.Label1.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(8, 155)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(967, 931)
+        Me.Label1.Size = New System.Drawing.Size(967, 988)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = resources.GetString("Label1.Text")
         '
@@ -74,6 +77,43 @@ Partial Class Instructions
         Me.BtnOk.Text = "Close"
         Me.BtnOk.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(377, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(342, 38)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Red Tag Master Tool"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(836, 102)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(128, 40)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Developed by:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ashwin Goyal" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'btnreset
+        '
+        Me.btnreset.BackColor = System.Drawing.SystemColors.Control
+        Me.btnreset.FlatAppearance.BorderSize = 0
+        Me.btnreset.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control
+        Me.btnreset.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
+        Me.btnreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnreset.Location = New System.Drawing.Point(12, 994)
+        Me.btnreset.Name = "btnreset"
+        Me.btnreset.Size = New System.Drawing.Size(10, 10)
+        Me.btnreset.TabIndex = 7
+        Me.btnreset.Text = "Reset Defaults"
+        Me.btnreset.UseVisualStyleBackColor = False
+        '
         'Instructions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -81,6 +121,9 @@ Partial Class Instructions
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(997, 529)
+        Me.Controls.Add(Me.btnreset)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BtnOk)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PicBoxlogo)
@@ -101,4 +144,7 @@ Partial Class Instructions
     Friend WithEvents PicBoxlogo As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnOk As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btnreset As Button
 End Class
