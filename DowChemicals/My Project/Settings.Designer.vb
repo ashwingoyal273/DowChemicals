@@ -153,6 +153,17 @@ Namespace My
                 Me("dbpath") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=""|DataDirectory|\admin.accdb"";Jet O"& _ 
+            "LEDB:Database Password =""testpassword"" ;")>  _
+        Public ReadOnly Property adminconnectionstring() As String
+            Get
+                Return CType(Me("adminconnectionstring"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

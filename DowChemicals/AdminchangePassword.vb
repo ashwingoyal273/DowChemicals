@@ -1,22 +1,38 @@
 ﻿Imports System.ComponentModel
 
 Public Class AdminchangePassword
-    Dim adminpass As String = My.Settings.pass
+    Dim cnn As New OleDb.OleDbConnection
+    Dim cmd As New OleDb.OleDbCommand
     Private Sub Btnok_Click(sender As Object, e As EventArgs) Handles btnok.Click
-        adminpass = My.Settings.pass
         If txtold.Text = "" Or txtnew.Text = "" Or txtconfirm.Text = "" Then
             MessageBox.Show(text:="All fields have to be filled", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             Exit Sub
         End If
-        If StrComp(txtold.Text, adminpass, vbBinaryCompare) <> 0 Then
-            MessageBox.Show(text:="The Old Password Entered is Wrong", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+        If Not cnn.State = ConnectionState.Open Then
+            cnn.Open()
+        End If
+        cmd.Connection = cnn
+        cmd.CommandText = "SELECT * FROM adminpass WHERE strcomp([username],'admin',0) = 0 AND strcomp([password],'" & txtold.Text & "',0) = 0"
+        Dim flag As Boolean = False
+        Using sda As New OleDb.OleDbDataAdapter(cmd)
+            Using dt As New DataTable
+                sda.Fill(dt)
+                If dt.Rows.Count < 1 Then flag = True
+            End Using
+        End Using
+        If flag = True Then
+            LoginForm1.BackgroundWorker2.RunWorkerAsync()
+            MessageBox.Show(text:="Username and Password combination is wrong", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             Exit Sub
         End If
-        If StrComp(txtnew.Text, txtconfirm.Text, vbBinaryCompare) <> 0 Then
+        If StrComp(txtnew.Text, txtconfirm.Text) <> 0 Then
+            LoginForm1.BackgroundWorker2.RunWorkerAsync()
             MessageBox.Show(text:="New Passwords do not match", caption:="Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
             Exit Sub
         End If
-        My.Settings.pass = txtconfirm.Text
+        cmd.CommandText = "UPDATE adminpass SET [password] ='" & txtconfirm.Text & "' WHERE [username] ='admin' AND [password] ='" & txtold.Text & "'"
+        cmd.ExecuteNonQuery()
+        cnn.Close()
         MessageBox.Show(text:="Admin Password Successfully changed", caption:=
                               "Success", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Asterisk)
         LoginForm3.Show()
@@ -29,7 +45,6 @@ Public Class AdminchangePassword
     End Sub
 
     Private Sub AdminchangePassword_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        adminpass = My.Settings.pass
         txtold.Text = ""
         txtnew.Text = ""
         txtconfirm.Text = ""
@@ -39,5 +54,9 @@ Public Class AdminchangePassword
     Private Sub AdminchangePassword_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Form1.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub AdminchangePassword_Load(sender As Object, e As EventArgs) Handles Me.Load
+        cnn.ConnectionString = My.Settings.adminconnectionstring
     End Sub
 End Class

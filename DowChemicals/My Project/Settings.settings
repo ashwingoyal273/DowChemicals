@@ -42,5 +42,12 @@
     <Setting Name="dbpath" Type="System.String" Scope="User">
       <Value Profile="(Default)">\\in048ndowd001\TALOJA_ODMS\Data\DCM\DCM RTM list\</Value>
     </Setting>
+    <Setting Name="adminconnectionstring" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="|DataDirectory|\admin.accdb";Jet OLEDB:Database Password ="testpassword" ;&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="|DataDirectory|\admin.accdb";Jet OLEDB:Database Password ="testpassword" ;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

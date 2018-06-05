@@ -1,17 +1,34 @@
 
+Imports System.ComponentModel
+
 Public Class LoginForm1
-
-    Dim username = My.Settings.adminusername
-    Dim password = My.Settings.pass
-
+    Dim cnn As New OleDb.OleDbConnection
+    Dim cmd As New OleDb.OleDbCommand
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        password = My.Settings.pass
-        If StrComp(txtusername.Text, username, vbBinaryCompare) = 0 And StrComp(txtpass.Text, password, vbBinaryCompare) = 0 Then
-            LoginForm3.Show()
-            Me.Hide()
-        Else
-            MessageBox.Show(Me, "The username or password entered is incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+        Try
+            If Not cnn.State = ConnectionState.Open Then
+                cnn.Open()
+            End If
+            cmd.Connection = cnn
+            cmd.CommandText = "SELECT * FROM adminpass WHERE strcomp([username],'" & Me.txtusername.Text & "',0) = 0 AND strcomp([password],'" & Me.txtpass.Text & "',0) = 0"
+            Using da As New OleDb.OleDbDataAdapter(cmd)
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    If dt.Rows.Count > 0 Then
+                        LoginForm3.Show()
+                        cnn.Close()
+                        Me.Hide()
+                    Else
+                        BackgroundWorker2.RunWorkerAsync()
+                        MessageBox.Show("The username or password entered is incorrect!", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+
+                    End If
+                End Using
+            End Using
+        Catch ex As OleDb.OleDbException
+            MessageBox.Show("COULD NOT CONNECT TO DATABASE" & Environment.NewLine & ex.Message, "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+            Exit Sub
+        End Try
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
@@ -24,13 +41,13 @@ Public Class LoginForm1
     End Sub
 
     Private Sub LoginForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cnn.ConnectionString = My.Settings.adminconnectionstring
         txtusername.Text = ""
         txtpass.Text = ""
     End Sub
 
     Private Sub LoginForm1_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        username = My.Settings.adminusername
-        password = My.Settings.pass
+        cnn.ConnectionString = My.Settings.adminconnectionstring
         txtusername.Focus()
         txtusername.Text = ""
         txtpass.Text = ""
@@ -41,4 +58,7 @@ Public Class LoginForm1
         Instructions.Show()
     End Sub
 
+    Private Sub BackgroundWorker2_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker2.DoWork
+        If cnn.State = ConnectionState.Open Then cnn.Close()
+    End Sub
 End Class

@@ -38,6 +38,7 @@ Partial Class LoginForm1
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.Btninstructions = New System.Windows.Forms.Button()
+        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -120,6 +121,10 @@ Partial Class LoginForm1
         Me.Btninstructions.Text = "Show Instructions"
         Me.Btninstructions.UseVisualStyleBackColor = True
         '
+        'BackgroundWorker2
+        '
+        Me.BackgroundWorker2.WorkerSupportsCancellation = True
+        '
         'LoginForm1
         '
         Me.AcceptButton = Me.OK
@@ -149,4 +154,5 @@ Partial Class LoginForm1
 
     Public WithEvents txtusername As TextBox
     Friend WithEvents Btninstructions As Button
+    Public WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
 End Class

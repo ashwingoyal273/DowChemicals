@@ -62,7 +62,7 @@ Partial Class Instructions
         Me.Label1.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(8, 155)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(967, 988)
+        Me.Label1.Size = New System.Drawing.Size(967, 1007)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = resources.GetString("Label1.Text")
         '
@@ -107,7 +107,7 @@ Partial Class Instructions
         Me.btnreset.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
         Me.btnreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnreset.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnreset.Location = New System.Drawing.Point(12, 994)
+        Me.btnreset.Location = New System.Drawing.Point(12, 1017)
         Me.btnreset.Name = "btnreset"
         Me.btnreset.Size = New System.Drawing.Size(10, 10)
         Me.btnreset.TabIndex = 7
@@ -121,13 +121,13 @@ Partial Class Instructions
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(997, 529)
-        Me.Controls.Add(Me.btnreset)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BtnOk)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PicBoxlogo)
         Me.Controls.Add(Me.lbltitle)
+        Me.Controls.Add(Me.btnreset)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
