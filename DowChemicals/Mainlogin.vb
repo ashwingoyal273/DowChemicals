@@ -11,7 +11,7 @@ Public Class Mainlogin
                 cnn.Open()
             End If
             cmd.Connection = cnn
-            cmd.CommandText = "SELECT * FROM employee WHERE [username]='" & Me.txtusername.Text & "' AND [password]='" & Me.txtpass.Text & "'"
+            cmd.CommandText = "SELECT * FROM employee WHERE strcomp([username],'" & Me.txtusername.Text & "',0) = 0 AND strcomp([password],'" & Me.txtpass.Text & "',0) = 0"
             Using da As New OleDb.OleDbDataAdapter(cmd)
                 Using dt As New DataTable
                     da.Fill(dt)

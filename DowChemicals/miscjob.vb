@@ -35,12 +35,9 @@ Public Class miscjob
             Dim jobscope As String = txtJob.Text
             Dim oWord As Word.Application
             Dim oDoc As Word.Document
-            Dim objapp As Excel.Application
-            Dim objbook As Excel._Workbook
-            objapp = CreateObject("Excel.Application")
-            objbook = objapp.Workbooks.Add(Environment.CurrentDirectory.ToString & "\Tag.xlsx")
-            Dim objsheet As Excel._Worksheet
-            objsheet = objbook.Sheets.Item(1)
+            Dim objapp As Excel.Application = Nothing
+            Dim objbook As Excel._Workbook = Nothing
+            Dim objsheet As Excel._Worksheet = Nothing
             Dim rng As Excel.Range = Nothing
             Dim opath As String = My.Settings.rtmpath
             Dim ctr As Integer = txtnooftags.Text
@@ -87,10 +84,18 @@ Public Class miscjob
                         .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                     End With
                 Next
-                System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\")
-                oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " Location Listing" & ".docx")
+                Try
+                    System.IO.Directory.CreateDirectory(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\")
+                    oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " Location Listing" & ".docx")
+                Catch ex As Exception
+                    MessageBox.Show(Me, "The RTM FILES could not be saved!" & Environment.NewLine & "Please check if the save path exists: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    oDoc.ActiveWindow.Close()
+                    oWord.Quit()
+                    Exit Sub
+                End Try
+
                 Dim equipment As String = txtequipment.Text
-                Dim oDoc1 As Word.Document
+                    Dim oDoc1 As Word.Document
                 oDoc1 = oWord.Documents.Add(opath & "RTM master file" & ".docx")
                 With oDoc1.Tables.Item(1).Cell(1, 2).Range
                     .Text = redtagmaster
@@ -120,11 +125,33 @@ Public Class miscjob
                     .Text &= DateString
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
-                oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " RTM file" & ".docx")
+                Try
+                    oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " RTM file" & ".docx")
+                Catch ex As Exception
+                    MessageBox.Show(Me, "The RTM FILES could not be saved!" & Environment.NewLine & "Please check if the save path exists: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    oDoc.ActiveWindow.Close()
+                    oWord.Quit()
+                    Exit Sub
+                End Try
+
 
                 prompt = MessageBox.Show(Me, "Please Review the RTM MASTER FILE and the RTM LOCATION LISTING FILE" & Environment.NewLine & "Prints will be generated as soon as you click OK", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk)
                 If prompt = DialogResult.OK Then
-                    objapp.Visible = True
+                    Try
+                        objapp = CreateObject("Excel.Application")
+                        objbook = objapp.Workbooks.Add(Environment.CurrentDirectory.ToString & "\Tag.xlsx")
+                        objsheet = objbook.Sheets.Item(1)
+                        objapp.Visible = True
+                    Catch ex As Exception
+                        MessageBox.Show(Me, "The Excel Template for the Red Tag Printing could not be opened" & Environment.NewLine & "Please check if the file exists " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        objbook.Close(False)
+                        objapp.Quit()
+                        oDoc.ActiveWindow.Close()
+                        oWord.Quit()
+                        GC.Collect()
+                        GC.WaitForPendingFinalizers()
+                        Exit Sub
+                    End Try
                     For i = 2 To ctr + 1
                         rng = objsheet.Range("A7")
                         rng.Value2 = jobscope

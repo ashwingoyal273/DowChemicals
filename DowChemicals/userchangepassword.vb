@@ -18,7 +18,7 @@ Public Class Userchangepassword
             cnn.Open()
         End If
         cmd.Connection = cnn
-        cmd.CommandText = "SELECT * from employee where [username] = '" & Mainlogin.empusername & "' AND [password] = '" & txtold.Text & "'"
+        cmd.CommandText = "SELECT * FROM employee WHERE strcomp([username],'" & Mainlogin.empusername & "',0) = 0 AND strcomp([password],'" & txtold.Text & "',0) = 0"
         Dim flag As Boolean = False
         Using sda As New OleDb.OleDbDataAdapter(cmd)
             Using dt As New DataTable
