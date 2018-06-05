@@ -54,7 +54,7 @@ Partial Class Addchangeusers
         Me.btnDone.Location = New System.Drawing.Point(212, 378)
         Me.btnDone.Name = "btnDone"
         Me.btnDone.Size = New System.Drawing.Size(393, 40)
-        Me.btnDone.TabIndex = 13
+        Me.btnDone.TabIndex = 6
         Me.btnDone.Text = "Done"
         Me.btnDone.UseVisualStyleBackColor = True
         '
@@ -63,7 +63,7 @@ Partial Class Addchangeusers
         Me.txtusername.Location = New System.Drawing.Point(187, 76)
         Me.txtusername.Name = "txtusername"
         Me.txtusername.Size = New System.Drawing.Size(205, 22)
-        Me.txtusername.TabIndex = 14
+        Me.txtusername.TabIndex = 0
         '
         'txtpass
         '
@@ -71,7 +71,7 @@ Partial Class Addchangeusers
         Me.txtpass.Name = "txtpass"
         Me.txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpass.Size = New System.Drawing.Size(205, 22)
-        Me.txtpass.TabIndex = 15
+        Me.txtpass.TabIndex = 1
         '
         'btnAdd
         '
@@ -79,7 +79,7 @@ Partial Class Addchangeusers
         Me.btnAdd.Location = New System.Drawing.Point(411, 74)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(334, 40)
-        Me.btnAdd.TabIndex = 18
+        Me.btnAdd.TabIndex = 3
         Me.btnAdd.Text = "Insert User"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
@@ -89,7 +89,7 @@ Partial Class Addchangeusers
         Me.btnDelete.Location = New System.Drawing.Point(411, 120)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(334, 40)
-        Me.btnDelete.TabIndex = 19
+        Me.btnDelete.TabIndex = 4
         Me.btnDelete.Text = "Delete User"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
@@ -119,7 +119,7 @@ Partial Class Addchangeusers
         Me.btnclear.Location = New System.Drawing.Point(411, 166)
         Me.btnclear.Name = "btnclear"
         Me.btnclear.Size = New System.Drawing.Size(122, 37)
-        Me.btnclear.TabIndex = 22
+        Me.btnclear.TabIndex = 5
         Me.btnclear.Text = "Clear"
         Me.btnclear.UseVisualStyleBackColor = True
         '
@@ -150,7 +150,7 @@ Partial Class Addchangeusers
         Me.txtconfirm.Name = "txtconfirm"
         Me.txtconfirm.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtconfirm.Size = New System.Drawing.Size(205, 22)
-        Me.txtconfirm.TabIndex = 24
+        Me.txtconfirm.TabIndex = 2
         '
         'lblconfirm
         '

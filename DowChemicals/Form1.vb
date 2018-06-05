@@ -45,19 +45,23 @@ Public Class Form1
 
             Try
                 With oDoc.Tables.Item(1).Cell(3, 1).Range
+                    .Bold = True
                     .Text &= redtagmaster
                     .Font.Size = 9
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc.Tables.Item(1).Cell(3, 2).Range
                     .Text &= DateString
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc.Tables.Item(1).Cell(4, 2).Range
+                    .Bold = True
                     .Text = "SCOPE OF WORK And REASON(S) WHY WORK Is BEING DONE: " & Environment.NewLine & jobscope
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc.Tables.Item(1).Cell(5, 1).Range
+                    .Bold = True
                     .Text &= txtName.Text
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
@@ -72,15 +76,27 @@ Public Class Form1
 
                 Loop
                 ctr -= 1
-                For i = 1 To ctr
-                    With oDoc.Tables.Item(1).Cell(7 + i, 1).Range
-                        .Text = redtagmaster & "A" & i
-                        .Font.Size = 9
-                        .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-                    End With
+                For i = 0 To ctr
+                    If i = 0 Then
+                        With oDoc.Tables.Item(1).Cell(7 + i, 1).Range
+                            .Cells.SetWidth(93, Word.WdRulerStyle.wdAdjustFirstColumn)
+                        End With
+                    Else
+
+                        With oDoc.Tables.Item(1).Cell(7 + i, 1).Range
+                            .Cells.SetWidth(93, Word.WdRulerStyle.wdAdjustFirstColumn)
+                            .Text = redtagmaster & "A" & i
+                            .Bold = True
+                            .Font.Size = 11
+                            .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                        End With
+                        With oDoc.Tables.Item(1).Cell(7 + i, 2).Range
+                            .Font.Size = 12
+                        End With
+                    End If
                 Next
             Catch ex As Exception
-                oDoc.ActiveWindow.Close()
+                oDoc.ActiveWindow.Close(False)
                 oWord.Quit()
                 MessageBox.Show(Me, "Error in the structure of the RTM Location listing file:" & Environment.NewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.Form1_Load(Me, Nothing)
@@ -94,7 +110,7 @@ Public Class Form1
                 oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " Location Listing" & ".docx")
             Catch ex As Exception
                 MessageBox.Show(Me, "The RTM FILES could not be saved!" & Environment.NewLine & "Please check if the save path exists: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                oDoc.ActiveWindow.Close()
+                oDoc.ActiveWindow.Close(False)
                 oWord.Quit()
             End Try
             Dim equipment As String = "Please fill manually"
@@ -114,31 +130,37 @@ Public Class Form1
                 End With
                 With oDoc1.Tables.Item(2).Cell(1, 1).Range
                     .Text &= ctr
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(1, 2).Range
                     .Text &= equipment
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(2, 1).Range
                     .Text &= jobscope
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(5, 1).Range
                     .Text &= jobscope
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(18, 1).Range
                     .Text &= txtName.Text
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc1.Tables.Item(2).Cell(18, 2).Range
                     .Text &= DateString
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
 
             Catch ex As Exception
-                oDoc.ActiveWindow.Close()
+                oDoc.ActiveWindow.Close(False)
                 oWord.Quit()
                 MessageBox.Show(Me, "Error in the structure of the RTM master file:" & Environment.NewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.Form1_Load(Me, Nothing)
@@ -162,7 +184,7 @@ Public Class Form1
                     MessageBox.Show(Me, "The Excel Template for the Red Tag Printing could not be opened" & Environment.NewLine & "Please check if the file exists " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     objbook.Close(False)
                     objapp.Quit()
-                    oDoc.ActiveWindow.Close()
+                    oDoc.ActiveWindow.Close(False)
                     oWord.Quit()
                     GC.Collect()
                     GC.WaitForPendingFinalizers()

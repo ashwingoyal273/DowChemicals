@@ -22,7 +22,12 @@
   &lt;string&gt;DT 230&lt;/string&gt;
   &lt;string&gt;DT 429&lt;/string&gt;
   &lt;string&gt;DT 430&lt;/string&gt;
+  &lt;string&gt;RXR 401&lt;/string&gt;
+  &lt;string&gt;C2 226&lt;/string&gt;
+  &lt;string&gt;C2 239&lt;/string&gt;
   &lt;string&gt;RXR&lt;/string&gt;
+  &lt;string&gt;MAT-1&lt;/string&gt;
+  &lt;string&gt;MAT-2&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="rtmpath" Type="System.String" Scope="User">

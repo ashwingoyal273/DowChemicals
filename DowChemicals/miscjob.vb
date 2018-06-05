@@ -89,7 +89,7 @@ Public Class miscjob
                     oDoc.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " Location Listing" & ".docx")
                 Catch ex As Exception
                     MessageBox.Show(Me, "The RTM FILES could not be saved!" & Environment.NewLine & "Please check if the save path exists: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    oDoc.ActiveWindow.Close()
+                    oDoc.ActiveWindow.Close(False)
                     oWord.Quit()
                     Exit Sub
                 End Try
@@ -129,7 +129,7 @@ Public Class miscjob
                     oDoc1.Application.ActiveDocument.SaveAs(My.Settings.savepath & Mainlogin.empusername & " " & DateString & "\" & jobscope & " RTM file" & ".docx")
                 Catch ex As Exception
                     MessageBox.Show(Me, "The RTM FILES could not be saved!" & Environment.NewLine & "Please check if the save path exists: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    oDoc.ActiveWindow.Close()
+                    oDoc.ActiveWindow.Close(False)
                     oWord.Quit()
                     Exit Sub
                 End Try
@@ -146,7 +146,7 @@ Public Class miscjob
                         MessageBox.Show(Me, "The Excel Template for the Red Tag Printing could not be opened" & Environment.NewLine & "Please check if the file exists " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         objbook.Close(False)
                         objapp.Quit()
-                        oDoc.ActiveWindow.Close()
+                        oDoc.ActiveWindow.Close(False)
                         oWord.Quit()
                         GC.Collect()
                         GC.WaitForPendingFinalizers()
