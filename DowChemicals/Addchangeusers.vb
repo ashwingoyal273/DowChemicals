@@ -62,6 +62,7 @@ Public Class Addchangeusers
         End If
         txtusername.Text = ""
         txtpass.Text = ""
+        txtconfirm.Text = ""
         cnn.Close()
     End Sub
 
@@ -91,6 +92,7 @@ Public Class Addchangeusers
     Private Sub Btnclear_Click(sender As Object, e As EventArgs) Handles btnclear.Click
         txtpass.Text = ""
         txtusername.Text = ""
+        txtconfirm.Text = ""
     End Sub
 
     Private Sub Addchangeusers_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -101,5 +103,6 @@ Public Class Addchangeusers
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         txtusername.Text = DataGridView1.CurrentCell.Value.ToString
         txtpass.Text = ""
+        txtconfirm.Text = ""
     End Sub
 End Class
