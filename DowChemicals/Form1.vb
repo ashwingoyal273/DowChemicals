@@ -3,9 +3,12 @@ Imports System.IO
 Imports Microsoft.Office.Interop
 Public Class Form1
     Dim opath As String = My.Settings.rtmpath
+    Dim ownerdept As String = ""
     Private Sub BtnDisplay_Click(sender As Object, e As EventArgs) Handles btnDisplay.Click
         If txtName.Text = "" Then
             MessageBox.Show("Please enter the name of the RTM issuer", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+        ElseIf txtremove.Text = "" Then
+            MessageBox.Show("Please enter the person who is authorized to remove the tag", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         ElseIf cbxScope.SelectedItem = "" Then
             MessageBox.Show("Please select the Job Scope", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         Else
@@ -66,7 +69,11 @@ Public Class Form1
                     .Text &= txtName.Text
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
-
+                With oDoc.Tables.Item(1).Cell(6, 1).Range
+                    .Text = "WHO CAN REMOVE TAGS(s)" & Environment.NewLine & txtremove.Text
+                    .Bold = True
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
                 Dim n As String = oDoc.Tables.Item(1).Cell(7 + ctr, 2).Range.Text
                 n = Mid(n, 1, Len(n) - 1)
                 Do Until String.IsNullOrEmpty(n) = True Or String.IsNullOrWhiteSpace(n) = True
@@ -199,6 +206,10 @@ Public Class Form1
                     rng.Value2 = jobscope
                     rng = objsheet.Range("B18")
                     rng.Value2 = txtName.Text
+                    rng = objsheet.Range("B12")
+                    rng.Value2 = ownerdept
+                    rng = objsheet.Range("B13")
+                    rng.Value2 = txtremove.Text
                     rng = objsheet.Range("B19")
                     rng.Value2 = redtagmaster
                     rng = objsheet.Range("A22")
@@ -253,21 +264,30 @@ Public Class Form1
 
     Private Sub Cbxarea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxarea.SelectedIndexChanged
         opath = My.Settings.rtmpath
+        ownerdept = ""
         Cleardropdown()
         If StrComp(cbxarea.SelectedItem, "Production") = 0 Then
             cbxsubarea.Enabled = True
             opath &= "Production\"
+            ownerdept &= "Production "
         Else
             cbxsubarea.Enabled = False
 
             If StrComp(cbxarea.SelectedItem, "Utility") = 0 Then
                 opath &= "Utilities\"
+                ownerdept &= "Utilities"
 
             ElseIf StrComp(cbxarea.SelectedItem, "Logistics") = 0 Then
                 opath &= "Logistics\"
+                ownerdept &= "Logistics"
+
+            ElseIf StrComp(cbxarea.SelectedItem, "General") = 0 Then
+                opath &= "General\"
+                ownerdept &= "General"
 
             ElseIf StrComp(cbxarea.SelectedItem, "Maintainance") = 0 Then
                 opath &= "Maintainance\"
+                ownerdept &= "Maintainance"
                 Dim filename As String
                 Dim FileLocation As DirectoryInfo = New DirectoryInfo(opath)
                 For Each File In FileLocation.GetFiles()
@@ -293,14 +313,19 @@ Public Class Form1
     Private Sub Cbxsubarea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxsubarea.SelectedIndexChanged
         Cleardropdown()
         opath = My.Settings.rtmpath & "Production\"
+        ownerdept = "Production "
         If StrComp(cbxsubarea.SelectedItem, "T1") = 0 Then
             opath &= "T1\"
+            ownerdept &= "T1"
         ElseIf StrComp(cbxsubarea.SelectedItem, "T2") = 0 Then
             opath &= "T2\"
+            ownerdept &= "T2"
         ElseIf StrComp(cbxsubarea.SelectedItem, "PE") = 0 Then
             opath &= "PE\"
+            ownerdept &= "PE"
         ElseIf StrComp(cbxsubarea.SelectedItem, "PU") = 0 Then
             opath &= "PU\"
+            ownerdept &= "PU"
         End If
         Dim filename As String
         Dim FileLocation As DirectoryInfo = New DirectoryInfo(opath)

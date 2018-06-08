@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_074F08CDBA3A42D797987CEDFC6C77FA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_29E45680DA5A8C97ADB96D536F3BDEC1"
         "OwnerKey" = "8:_308B26602C60FDCF211CBB7DA5C0AD2E"
         "MsmSig" = "8:_UNDEFINED"
@@ -34,6 +40,12 @@
         "Entry"
         {
         "MsmKey" = "8:_334F23DD60FA4F9996719A4199F151CE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_461C7F564DE5443B8D01CC5AB95D70C6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -59,12 +71,6 @@
         {
         "MsmKey" = "8:_C96E47FACB95B99340337141A04B6291"
         "OwnerKey" = "8:_BC951E8AE97D4220A105E9E9BE1BC4E0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F339589F3DCA462EBE64FDE1F2AF960A"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -200,6 +206,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_074F08CDBA3A42D797987CEDFC6C77FA"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Dow Chemicals International\\Tag Temp.xlsx"
+            "TargetName" = "8:Tag Temp.xlsx"
+            "Tag" = "8:"
+            "Folder" = "8:_1AFF2DEC06434E8188791128EC2368DF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_29E45680DA5A8C97ADB96D536F3BDEC1"
             {
             "AssemblyRegister" = "3:1"
@@ -302,6 +328,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_461C7F564DE5443B8D01CC5AB95D70C6"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Dow Chemicals International\\Tag.xlsx"
+            "TargetName" = "8:Tag.xlsx"
+            "Tag" = "8:"
+            "Folder" = "8:_0A2040F507AD447C963E8BB9291A7BEC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9CE165ECE35543CA95E99AD8F5696E7B"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Dow Chemicals International\\emp.accdb"
@@ -373,26 +419,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F339589F3DCA462EBE64FDE1F2AF960A"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Dow Chemicals International\\Tag.xlsx"
-            "TargetName" = "8:Tag.xlsx"
-            "Tag" = "8:"
-            "Folder" = "8:_1AFF2DEC06434E8188791128EC2368DF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -409,6 +435,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_0A2040F507AD447C963E8BB9291A7BEC"
+                    {
+                    "Name" = "8:Please replace tag.xlsx with the file in this folder when new roles arrive and delete this folder"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_254BB4828C944B789C44329B242F33C7"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_7BA4032FF18F4A6F8F8B6D25A095150C"
@@ -450,7 +487,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Red Tag Master"
         "ProductCode" = "8:{BEF5F509-82D5-4666-8883-78B7DCDF47F8}"
-        "PackageCode" = "8:{9D2E2C21-3AB7-40A5-A2DF-C08FB308F1D4}"
+        "PackageCode" = "8:{52AA696C-75DD-4E49-934D-B89F7EAE2D74}"
         "UpgradeCode" = "8:{5F9919D8-6656-43A5-BEDA-DA3E8BC985EF}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

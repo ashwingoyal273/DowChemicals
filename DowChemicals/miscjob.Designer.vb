@@ -39,6 +39,8 @@ Partial Class miscjob
         Me.btnback = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblusername = New System.Windows.Forms.Label()
+        Me.txtremove = New System.Windows.Forms.TextBox()
+        Me.lblremove = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,16 +58,16 @@ Partial Class miscjob
         Me.lblname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblname.Location = New System.Drawing.Point(16, 100)
         Me.lblname.Name = "lblname"
-        Me.lblname.Size = New System.Drawing.Size(92, 20)
+        Me.lblname.Size = New System.Drawing.Size(98, 20)
         Me.lblname.TabIndex = 11
-        Me.lblname.Text = "Issued By"
+        Me.lblname.Text = "Tagged By"
         '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(13, 297)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 336)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(142, 143)
         Me.PictureBox1.TabIndex = 15
@@ -89,7 +91,7 @@ Partial Class miscjob
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTime.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTime.Location = New System.Drawing.Point(475, 418)
+        Me.lblTime.Location = New System.Drawing.Point(475, 432)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(46, 20)
         Me.lblTime.TabIndex = 12
@@ -107,7 +109,7 @@ Partial Class miscjob
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(16, 245)
+        Me.Label3.Location = New System.Drawing.Point(16, 248)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(97, 20)
         Me.Label3.TabIndex = 17
@@ -141,7 +143,7 @@ Partial Class miscjob
         'btnDisplay
         '
         Me.btnDisplay.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDisplay.Location = New System.Drawing.Point(375, 297)
+        Me.btnDisplay.Location = New System.Drawing.Point(375, 371)
         Me.btnDisplay.Name = "btnDisplay"
         Me.btnDisplay.Size = New System.Drawing.Size(218, 36)
         Me.btnDisplay.TabIndex = 21
@@ -151,7 +153,7 @@ Partial Class miscjob
         'btnback
         '
         Me.btnback.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnback.Location = New System.Drawing.Point(199, 297)
+        Me.btnback.Location = New System.Drawing.Point(178, 371)
         Me.btnback.Name = "btnback"
         Me.btnback.Size = New System.Drawing.Size(170, 36)
         Me.btnback.TabIndex = 22
@@ -179,11 +181,31 @@ Partial Class miscjob
         Me.lblusername.TabIndex = 24
         Me.lblusername.Text = "Username"
         '
+        'txtremove
+        '
+        Me.txtremove.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtremove.Location = New System.Drawing.Point(151, 301)
+        Me.txtremove.Name = "txtremove"
+        Me.txtremove.Size = New System.Drawing.Size(442, 27)
+        Me.txtremove.TabIndex = 26
+        '
+        'lblremove
+        '
+        Me.lblremove.AutoSize = True
+        Me.lblremove.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblremove.Location = New System.Drawing.Point(17, 288)
+        Me.lblremove.Name = "lblremove"
+        Me.lblremove.Size = New System.Drawing.Size(114, 40)
+        Me.lblremove.TabIndex = 25
+        Me.lblremove.Text = "To be " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Removed By"
+        '
         'miscjob
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(605, 450)
+        Me.ClientSize = New System.Drawing.Size(605, 487)
+        Me.Controls.Add(Me.txtremove)
+        Me.Controls.Add(Me.lblremove)
         Me.Controls.Add(Me.lblusername)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnback)
@@ -225,4 +247,6 @@ Partial Class miscjob
     Friend WithEvents btnback As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents lblusername As Label
+    Friend WithEvents txtremove As TextBox
+    Friend WithEvents lblremove As Label
 End Class

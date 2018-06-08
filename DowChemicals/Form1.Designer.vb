@@ -42,6 +42,8 @@ Partial Class Form1
         Me.lblusername = New System.Windows.Forms.Label()
         Me.btnlogout = New System.Windows.Forms.Button()
         Me.Btninstructions = New System.Windows.Forms.Button()
+        Me.txtremove = New System.Windows.Forms.TextBox()
+        Me.lblremove = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,18 +62,18 @@ Partial Class Form1
         Me.lblname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblname.Location = New System.Drawing.Point(15, 98)
         Me.lblname.Name = "lblname"
-        Me.lblname.Size = New System.Drawing.Size(92, 20)
+        Me.lblname.Size = New System.Drawing.Size(98, 20)
         Me.lblname.TabIndex = 1
-        Me.lblname.Text = "Issued By"
+        Me.lblname.Text = "Tagged By"
         '
         'btnDisplay
         '
         Me.btnDisplay.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDisplay.Location = New System.Drawing.Point(198, 252)
+        Me.btnDisplay.Location = New System.Drawing.Point(198, 306)
         Me.btnDisplay.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnDisplay.Name = "btnDisplay"
         Me.btnDisplay.Size = New System.Drawing.Size(219, 36)
-        Me.btnDisplay.TabIndex = 4
+        Me.btnDisplay.TabIndex = 5
         Me.btnDisplay.Text = "Print RTM"
         Me.btnDisplay.UseVisualStyleBackColor = True
         '
@@ -79,18 +81,18 @@ Partial Class Form1
         '
         Me.cbxScope.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxScope.FormattingEnabled = True
-        Me.cbxScope.Location = New System.Drawing.Point(138, 206)
+        Me.cbxScope.Location = New System.Drawing.Point(138, 250)
         Me.cbxScope.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxScope.Name = "cbxScope"
         Me.cbxScope.Size = New System.Drawing.Size(454, 28)
-        Me.cbxScope.TabIndex = 3
+        Me.cbxScope.TabIndex = 4
         '
         'lblTime
         '
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTime.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTime.Location = New System.Drawing.Point(474, 416)
+        Me.lblTime.Location = New System.Drawing.Point(474, 470)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(46, 20)
         Me.lblTime.TabIndex = 6
@@ -103,7 +105,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(15, 215)
+        Me.Label1.Location = New System.Drawing.Point(15, 259)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 20)
         Me.Label1.TabIndex = 7
@@ -126,7 +128,7 @@ Partial Class Form1
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 295)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 349)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(144, 142)
@@ -136,11 +138,11 @@ Partial Class Form1
         'btnmisc
         '
         Me.btnmisc.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmisc.Location = New System.Drawing.Point(19, 252)
+        Me.btnmisc.Location = New System.Drawing.Point(19, 306)
         Me.btnmisc.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmisc.Name = "btnmisc"
         Me.btnmisc.Size = New System.Drawing.Size(151, 36)
-        Me.btnmisc.TabIndex = 5
+        Me.btnmisc.TabIndex = 6
         Me.btnmisc.Text = "Misc. Job"
         Me.btnmisc.UseVisualStyleBackColor = True
         '
@@ -148,7 +150,7 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(15, 139)
+        Me.Label3.Location = New System.Drawing.Point(15, 183)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(48, 20)
         Me.Label3.TabIndex = 12
@@ -158,7 +160,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(15, 175)
+        Me.Label4.Location = New System.Drawing.Point(15, 219)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(87, 20)
         Me.Label4.TabIndex = 13
@@ -169,31 +171,31 @@ Partial Class Form1
         Me.cbxsubarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxsubarea.FormattingEnabled = True
         Me.cbxsubarea.Items.AddRange(New Object() {"T1", "T2", "PU", "PE"})
-        Me.cbxsubarea.Location = New System.Drawing.Point(138, 172)
+        Me.cbxsubarea.Location = New System.Drawing.Point(138, 216)
         Me.cbxsubarea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxsubarea.Name = "cbxsubarea"
         Me.cbxsubarea.Size = New System.Drawing.Size(454, 28)
-        Me.cbxsubarea.TabIndex = 2
+        Me.cbxsubarea.TabIndex = 3
         '
         'cbxarea
         '
         Me.cbxarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxarea.FormattingEnabled = True
-        Me.cbxarea.Items.AddRange(New Object() {"Production", "Logistics", "Utility", "Maintainance"})
-        Me.cbxarea.Location = New System.Drawing.Point(138, 136)
+        Me.cbxarea.Items.AddRange(New Object() {"Production", "Logistics", "Utility", "Maintainance", "General"})
+        Me.cbxarea.Location = New System.Drawing.Point(138, 180)
         Me.cbxarea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxarea.Name = "cbxarea"
         Me.cbxarea.Size = New System.Drawing.Size(454, 28)
-        Me.cbxarea.TabIndex = 1
+        Me.cbxarea.TabIndex = 2
         '
         'btnchngpass
         '
         Me.btnchngpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnchngpass.Location = New System.Drawing.Point(459, 295)
+        Me.btnchngpass.Location = New System.Drawing.Point(459, 349)
         Me.btnchngpass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnchngpass.Name = "btnchngpass"
         Me.btnchngpass.Size = New System.Drawing.Size(133, 58)
-        Me.btnchngpass.TabIndex = 14
+        Me.btnchngpass.TabIndex = 7
         Me.btnchngpass.Text = "Change Password"
         Me.btnchngpass.UseVisualStyleBackColor = True
         '
@@ -209,31 +211,51 @@ Partial Class Form1
         'btnlogout
         '
         Me.btnlogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnlogout.Location = New System.Drawing.Point(459, 252)
+        Me.btnlogout.Location = New System.Drawing.Point(459, 306)
         Me.btnlogout.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnlogout.Name = "btnlogout"
         Me.btnlogout.Size = New System.Drawing.Size(132, 36)
-        Me.btnlogout.TabIndex = 16
+        Me.btnlogout.TabIndex = 9
         Me.btnlogout.Text = "Logout"
         Me.btnlogout.UseVisualStyleBackColor = True
         '
         'Btninstructions
         '
         Me.Btninstructions.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btninstructions.Location = New System.Drawing.Point(198, 295)
+        Me.Btninstructions.Location = New System.Drawing.Point(198, 349)
         Me.Btninstructions.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btninstructions.Name = "Btninstructions"
         Me.Btninstructions.Size = New System.Drawing.Size(219, 58)
-        Me.Btninstructions.TabIndex = 17
+        Me.Btninstructions.TabIndex = 8
         Me.Btninstructions.Text = "Show Instructions"
         Me.Btninstructions.UseVisualStyleBackColor = True
+        '
+        'txtremove
+        '
+        Me.txtremove.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtremove.Location = New System.Drawing.Point(138, 142)
+        Me.txtremove.Name = "txtremove"
+        Me.txtremove.Size = New System.Drawing.Size(453, 27)
+        Me.txtremove.TabIndex = 1
+        '
+        'lblremove
+        '
+        Me.lblremove.AutoSize = True
+        Me.lblremove.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblremove.Location = New System.Drawing.Point(15, 129)
+        Me.lblremove.Name = "lblremove"
+        Me.lblremove.Size = New System.Drawing.Size(114, 40)
+        Me.lblremove.TabIndex = 27
+        Me.lblremove.Text = "To be " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Removed By"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(605, 450)
+        Me.ClientSize = New System.Drawing.Size(605, 503)
+        Me.Controls.Add(Me.txtremove)
+        Me.Controls.Add(Me.lblremove)
         Me.Controls.Add(Me.Btninstructions)
         Me.Controls.Add(Me.btnlogout)
         Me.Controls.Add(Me.lblusername)
@@ -283,5 +305,7 @@ Partial Class Form1
     Friend WithEvents lblusername As Label
     Friend WithEvents btnlogout As Button
     Friend WithEvents Btninstructions As Button
+    Friend WithEvents txtremove As TextBox
+    Friend WithEvents lblremove As Label
 End Class
 

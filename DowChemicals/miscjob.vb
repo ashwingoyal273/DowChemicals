@@ -14,6 +14,8 @@ Public Class miscjob
     Private Sub BtnDisplay_Click(sender As Object, e As EventArgs) Handles btnDisplay.Click
         If txtName.Text = "" Then
             MessageBox.Show("Please enter the name of the RTM issuer", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+        ElseIf txtremove.Text = "" Then
+            MessageBox.Show("Please enter the person who is authorized to remove the tag", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         ElseIf txtJob.Text = "" Then
             MessageBox.Show("Please enter the Job Scope", "Error", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         ElseIf txtequipment.Text = "" Then
@@ -58,22 +60,30 @@ Public Class miscjob
 
                 With oDoc.Tables.Item(1).Cell(3, 1).Range
                     .Text &= redtagmaster
+                    .Bold = True
                     .Font.Size = 9
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc.Tables.Item(1).Cell(3, 2).Range
                     .Text &= DateString
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc.Tables.Item(1).Cell(4, 2).Range
                     .Text = "SCOPE OF WORK And REASON(S) WHY WORK Is BEING DONE: " & Environment.NewLine & jobscope
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
                 With oDoc.Tables.Item(1).Cell(5, 1).Range
                     .Text &= txtName.Text
+                    .Bold = True
                     .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
                 End With
-
+                With oDoc.Tables.Item(1).Cell(6, 1).Range
+                    .Text = "WHO CAN REMOVE TAGS(s)" & Environment.NewLine & txtremove.Text
+                    .Bold = True
+                    .ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                End With
 
                 For i = 0 To ctr
                     If i = 0 Then
@@ -173,6 +183,8 @@ Public Class miscjob
                     For i = 2 To ctr + 1
                         rng = objsheet.Range("A7")
                         rng.Value2 = jobscope
+                        rng = objsheet.Range("B13")
+                        rng.Value2 = txtremove.Text
                         rng = objsheet.Range("B18")
                         rng.Value2 = txtName.Text
                         rng = objsheet.Range("B19")
